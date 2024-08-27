@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
-//Name: Flamethrower.ma
-//Last modified: Mon, Aug 26, 2024 09:39:18 PM
+//Name: Flamethrower.0001.ma
+//Last modified: Mon, Aug 26, 2024 09:39:22 PM
 //Codeset: 1252
 requires maya "2023";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.2.1.1";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "083BC681-409A-71D1-9821-DFB08AAC6D68";
+fileInfo "UUID" "76B7F030-4C05-20A2-EB69-48BEE37A973C";
 createNode transform -s -n "persp";
 	rename -uid "2E991089-4EA9-CE26-7E8E-09B7F86A75B2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 24.857045215748201 5.4239529645960474 -6.3741200443542496 ;
-	setAttr ".r" -type "double3" -1091.738352631899 -13570.199999996621 0 ;
+	setAttr ".t" -type "double3" 21.877348877280173 2.4381073103665534 15.713095625547547 ;
+	setAttr ".r" -type "double3" -1084.5383526318592 -13624.199999996115 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9F16E17A-4E01-D78F-3F64-B193DE4B40C3";
 	setAttr -k off ".v" no;
@@ -7414,4 +7414,4 @@ connectAttr "Ignitor_TipShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Rail_AttachmentShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Foregrip_BaseShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "ForegripShape.iog" ":initialShadingGroup.dsm" -na;
-// End of Flamethrower.ma
+// End of Flamethrower.0001.ma
