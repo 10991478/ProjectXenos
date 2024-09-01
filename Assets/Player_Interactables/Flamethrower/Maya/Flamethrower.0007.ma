@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
-//Name: Flamethrower.0006.ma
-//Last modified: Sat, Aug 31, 2024 08:09:43 PM
+//Name: Flamethrower.0007.ma
+//Last modified: Sat, Aug 31, 2024 08:09:53 PM
 //Codeset: 1252
 requires maya "2023";
 requires "stereoCamera" "10.0";
@@ -12,19 +12,19 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "0D0B0CF8-4898-A1DD-2B91-C1BB7B5E94EA";
+fileInfo "UUID" "BA16CCCF-43DD-9D0D-C634-21B055D02A71";
 createNode transform -s -n "persp";
 	rename -uid "2E991089-4EA9-CE26-7E8E-09B7F86A75B2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 24.731698403349956 0.035769994436174457 5.833680733310235 ;
-	setAttr ".r" -type "double3" -0.3383559813948287 -3525.8000000001612 9.1259221771545645e-17 ;
+	setAttr ".t" -type "double3" 27.051563751553108 2.1653800463116908 26.902394371051265 ;
+	setAttr ".r" -type "double3" -3.3383559812388124 -3558.1999999997274 -2.6665468462684463e-16 ;
 	setAttr ".rp" -type "double3" 0 5.5511151231257827e-17 0 ;
 	setAttr ".rpt" -type "double3" -2.6188575511540274e-18 -1.7405027778358411e-19 3.526294685834021e-18 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9F16E17A-4E01-D78F-3F64-B193DE4B40C3";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 26.96380740296247;
+	setAttr ".coi" 40.083760256204329;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -34036,4 +34036,4 @@ connectAttr "groupId43.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId44.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId45.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId46.msg" ":initialShadingGroup.gn" -na;
-// End of Flamethrower.0006.ma
+// End of Flamethrower.0007.ma
