@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: FlamethrowerSubstance.ma
-//Last modified: Sun, Sep 01, 2024 10:01:00 PM
+//Last modified: Mon, Sep 02, 2024 11:04:32 PM
 //Codeset: 1252
 requires maya "2023";
 requires "stereoCamera" "10.0";
@@ -13,19 +13,19 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "83C23830-4629-5836-A67B-F295B4CF77B2";
+fileInfo "UUID" "CF644065-488F-3E48-D4E1-B28BEBA404B5";
 createNode transform -s -n "persp";
 	rename -uid "2E991089-4EA9-CE26-7E8E-09B7F86A75B2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 18.295600613287309 1.258827914913621 13.241150579526836 ;
-	setAttr ".r" -type "double3" -360.93835658994874 -4984.2000000002417 0 ;
+	setAttr ".t" -type "double3" 22.87101062045042 1.212539153438859 13.700250649812599 ;
+	setAttr ".r" -type "double3" -361.53835658998139 -4982.6000000000013 0 ;
 	setAttr ".rp" -type "double3" 0 5.5511151231257827e-17 0 ;
 	setAttr ".rpt" -type "double3" -2.6188575511540274e-18 -1.7405027778358411e-19 3.526294685834021e-18 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9F16E17A-4E01-D78F-3F64-B193DE4B40C3";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 24.399015996125208;
+	setAttr ".coi" 28.305543106118328;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -13782,11 +13782,8 @@ createNode mesh -n "Ammo_Counter1Shape" -p "transform1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 5 ".pt";
-	setAttr ".pt[26]" -type "float3" 0 -0.55001861 -0.80059761 ;
-	setAttr ".pt[27]" -type "float3" 0 -0.55001861 -0.80059761 ;
-	setAttr ".pt[28]" -type "float3" 0 -0.55001861 -0.80059761 ;
-	setAttr ".pt[29]" -type "float3" 0 -0.55001861 -0.80059761 ;
+	setAttr -s 4 ".pt[26:29]" -type "float3"  0 -0.55001861 -0.80059761 
+		0 -0.55001861 -0.80059761 0 -0.55001861 -0.80059761 0 -0.55001861 -0.80059761;
 createNode transform -n "Frame" -p "Flamethrower";
 	rename -uid "17A20A0F-42D6-AB53-D9EA-129F5E888498";
 createNode transform -n "Frame" -p "|Flamethrower|Frame";
@@ -34213,15 +34210,15 @@ createNode mesh -n "FrameDuplicateShape" -p "FrameDuplicate";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "2537F21F-4C80-46CD-9FF6-26A70E3347B7";
+	rename -uid "9ECDAD09-4054-DFDB-8140-398CBC7EA177";
 	setAttr -s 16 ".lnk";
 	setAttr -s 16 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "4772A01B-4DD1-3F7E-8428-1EA1478C9C64";
+	rename -uid "F632360B-477E-4041-CB2D-B7A3E5FEE953";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "2FE25369-4BFE-B10C-0E79-3C90847F02CE";
+	rename -uid "8903D52A-42E9-10A8-E9A2-4EB093A18BFE";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "0C09AD70-46B1-9EB0-5F4B-CAAF0245D6E3";
+	rename -uid "7282326C-4F37-4E00-328D-399268E4C98B";
 	setAttr ".cdl" 1;
 	setAttr -s 2 ".dli";
 	setAttr ".dli[2]" 1;
@@ -34229,7 +34226,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "FEBA13CB-47A5-5A73-EC7A-2ABAA890109A";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "AD45E0A8-4D84-98A6-6396-AB80CAA30AC4";
+	rename -uid "DADA49A0-4845-4753-5C37-84B9438BCEF9";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "61595D2A-4596-8A0B-AEA9-16AF5418F7C5";
 	setAttr ".g" yes;
