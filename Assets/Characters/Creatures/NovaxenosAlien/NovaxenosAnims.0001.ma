@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
-//Name: NovaxenosAnims.ma
-//Last modified: Fri, Oct 11, 2024 11:33:14 PM
+//Name: NovaxenosAnims.0001.ma
+//Last modified: Fri, Oct 11, 2024 11:33:17 PM
 //Codeset: 1252
 file -rdi 1 -ns "NovaxenosRigSkinned" -rfn "NovaxenosRigSkinnedRN" -op "v=0;"
 		 -typ "mayaAscii" "D:/GitRepos/ProjectXenos//Assets/Characters/Creatures/NovaxenosAlien/NovaxenosRigSkinned.ma";
@@ -16,12 +16,12 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "DBCB9515-4DEC-F0B6-332B-B1981E71923D";
+fileInfo "UUID" "CA3CB5D7-4ED9-4074-99A8-68B58445ADE0";
 createNode transform -s -n "persp";
 	rename -uid "DE6EED46-40D0-F8E2-A7BE-FFBBA4A74727";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 6.3932698269252128 -1.1029734874530663 9.1046945984428014 ;
-	setAttr ".r" -type "double3" 7.4616472877079927 -4281.3999999996931 0 ;
+	setAttr ".t" -type "double3" 6.479642842744509 -1.304337105154681 8.9980526164497725 ;
+	setAttr ".r" -type "double3" 8.6616472877077406 -4280.5999999996729 -5.1449729741316325e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4D43D119-48A8-9E4D-6B68-45BD213AEBF3";
 	setAttr -k off ".v" no;
@@ -8223,4 +8223,4 @@ connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "pairBlend1_inTranslateX1.o" "pairBlend1.itx1";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of NovaxenosAnims.ma
+// End of NovaxenosAnims.0001.ma
