@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: NovaxenosAnims.0001.ma
-//Last modified: Fri, Oct 11, 2024 11:33:17 PM
+//Last modified: Sun, Oct 13, 2024 05:23:13 PM
 //Codeset: 1252
 file -rdi 1 -ns "NovaxenosRigSkinned" -rfn "NovaxenosRigSkinnedRN" -op "v=0;"
 		 -typ "mayaAscii" "D:/GitRepos/ProjectXenos//Assets/Characters/Creatures/NovaxenosAlien/NovaxenosRigSkinned.ma";
@@ -9,6 +9,7 @@ file -r -ns "NovaxenosRigSkinned" -dr 1 -rfn "NovaxenosRigSkinnedRN" -op "v=0;"
 requires maya "2023";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
 requires "stereoCamera" "10.0";
+requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.2.1.1";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -16,22 +17,22 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "CA3CB5D7-4ED9-4074-99A8-68B58445ADE0";
+fileInfo "UUID" "791DC3E2-4523-4A66-6ACF-88892B561E38";
 createNode transform -s -n "persp";
 	rename -uid "DE6EED46-40D0-F8E2-A7BE-FFBBA4A74727";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 6.479642842744509 -1.304337105154681 8.9980526164497725 ;
-	setAttr ".r" -type "double3" 8.6616472877077406 -4280.5999999996729 -5.1449729741316325e-16 ;
+	setAttr ".t" -type "double3" 6.1092533375337563 -0.71866132944677519 8.6638992118204907 ;
+	setAttr ".r" -type "double3" 5.6616472597907501 3640.1999999702657 5.2051767763086468e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4D43D119-48A8-9E4D-6B68-45BD213AEBF3";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 9.7105422414626545;
+	setAttr ".coi" 10.819971167150193;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.037736355620792583 -0.13842357051469178 3.0530462274670471 ;
+	setAttr ".tp" -type "double3" 0.41736523579480289 -0.037222516114439365 3.0323066919246964 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "82FBE607-4D88-F5CF-DBBF-2A8877CC725E";
@@ -69,14 +70,14 @@ createNode camera -s -n "frontShape" -p "front";
 createNode transform -s -n "side";
 	rename -uid "785A647D-4007-1170-2B7D-0DBDFF79FE3A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1000.1 0 0 ;
+	setAttr ".t" -type "double3" 1000.1 0.23616872314765691 1.3683893664731877 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 createNode camera -s -n "sideShape" -p "side";
 	rename -uid "ECA11735-40BA-3455-81A1-FC9517A21E85";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 21.207605439515884;
+	setAttr ".ow" 12.614188271651315;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
@@ -84,21 +85,21 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E83E4F45-4499-A82E-905A-DA96F4E8F820";
+	rename -uid "4FD3D360-44DD-EB65-263B-5786004E704C";
 	setAttr -s 7 ".lnk";
 	setAttr -s 7 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "DA0F6C31-4307-6885-1D18-089F08C969C3";
+	rename -uid "F062C682-4FE5-E588-07BA-E1AB96C398F3";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "73799CB7-4C5E-05C0-7311-5085E0A49F07";
+	rename -uid "F0AC30D0-43BA-C04F-C645-FFAC5F8A8D44";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "BB992F89-48A1-DEC0-0C5B-1596593D6C25";
+	rename -uid "0EDD8D9A-43BF-6814-2EF0-9A923F7F9F75";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "C9142B2E-48C6-EABD-085C-22BBE34FCFD9";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "BF9969BA-4675-FC11-D83D-AFBD03FD69B0";
+	rename -uid "26665B48-4F4A-ADCE-1400-478546AE8E32";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "21F7AE44-452B-F21B-9819-BEB73FEE0BF9";
 	setAttr ".g" yes;
@@ -117,7 +118,7 @@ createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 	setAttr ".ai_translator" -type "string" "maya";
 createNode reference -n "NovaxenosRigSkinnedRN";
 	rename -uid "E580B8B6-424F-2104-672F-FB902FA7F835";
-	setAttr -s 793 ".phl";
+	setAttr -s 815 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -911,133 +912,520 @@ createNode reference -n "NovaxenosRigSkinnedRN";
 	setAttr ".phl[791]" 0;
 	setAttr ".phl[792]" 0;
 	setAttr ".phl[793]" 0;
+	setAttr ".phl[794]" 0;
+	setAttr ".phl[795]" 0;
+	setAttr ".phl[796]" 0;
+	setAttr ".phl[797]" 0;
+	setAttr ".phl[798]" 0;
+	setAttr ".phl[799]" 0;
+	setAttr ".phl[800]" 0;
+	setAttr ".phl[801]" 0;
+	setAttr ".phl[802]" 0;
+	setAttr ".phl[803]" 0;
+	setAttr ".phl[804]" 0;
+	setAttr ".phl[805]" 0;
+	setAttr ".phl[806]" 0;
+	setAttr ".phl[807]" 0;
+	setAttr ".phl[808]" 0;
+	setAttr ".phl[809]" 0;
+	setAttr ".phl[810]" 0;
+	setAttr ".phl[811]" 0;
+	setAttr ".phl[812]" 0;
+	setAttr ".phl[813]" 0;
+	setAttr ".phl[814]" 0;
+	setAttr ".phl[815]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"NovaxenosRigSkinnedRN"
 		"NovaxenosRigSkinnedRN" 0
-		"NovaxenosRigSkinnedRN" 901
+		"NovaxenosRigSkinnedRN" 1090
 		1 |NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Neck_Head_FK_Ctrl_Grp|NovaxenosRigSkinned:Lower_Jaw_Ctrl_Grp|NovaxenosRigSkinned:Lower_Jaw_Ctrl 
 		"blendUpperJawCtrl" "blendUpperJawCtrl" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
 		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_04|NovaxenosRigSkinned:L_HandClaw_Shape4" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_04|NovaxenosRigSkinned:L_HandClaw_Shape4" 
+		"uvPivot" " -type \"double2\" 5.29385280609130859 0.96210187673568726"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_03|NovaxenosRigSkinned:L_HandClaw_Shape3" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_03|NovaxenosRigSkinned:L_HandClaw_Shape3" 
+		"uvPivot" " -type \"double2\" 5.91200160980224609 0.30974158644676208"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_02|NovaxenosRigSkinned:L_HandClaw_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_02|NovaxenosRigSkinned:L_HandClaw_Shape2" 
+		"uvPivot" " -type \"double2\" 5.05718541145324707 0.70571291446685791"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_01|NovaxenosRigSkinned:L_HandClaw_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:L_Hand_Claws|NovaxenosRigSkinned:L_HandClaw_01|NovaxenosRigSkinned:L_HandClaw_Shape1" 
+		"uvPivot" " -type \"double2\" 5.9318232536315918 0.13797841966152191"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_04|NovaxenosRigSkinned:R_HandClaw_Shape4" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_04|NovaxenosRigSkinned:R_HandClaw_Shape4" 
+		"uvPivot" " -type \"double2\" 5.48931217193603516 0.9579349160194397"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_03|NovaxenosRigSkinned:R_HandClaw_Shape3" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_03|NovaxenosRigSkinned:R_HandClaw_Shape3" 
+		"uvPivot" " -type \"double2\" 5.20217585563659668 0.92469924688339233"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_02|NovaxenosRigSkinned:R_HandClaw_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_02|NovaxenosRigSkinned:R_HandClaw_Shape2" 
+		"uvPivot" " -type \"double2\" 5.56641316413879395 0.90609580278396606"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_01|NovaxenosRigSkinned:R_HandClaw_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:HandClaws|NovaxenosRigSkinned:R_Hand_Claws|NovaxenosRigSkinned:R_HandClaw_01|NovaxenosRigSkinned:R_HandClaw_Shape1" 
+		"uvPivot" " -type \"double2\" 5.29400467872619629 0.28631530702114105"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_01|NovaxenosRigSkinned:L_FootClaw_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_01|NovaxenosRigSkinned:L_FootClaw_Shape1" 
+		"uvPivot" " -type \"double2\" 5.95264720916748047 0.36930206418037415"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_02|NovaxenosRigSkinned:L_FootClaw_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_02|NovaxenosRigSkinned:L_FootClaw_Shape2" 
+		"uvPivot" " -type \"double2\" 5.91548514366149902 0.50878216326236725"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_03|NovaxenosRigSkinned:L_FootClaw_Shape3" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_03|NovaxenosRigSkinned:L_FootClaw_Shape3" 
+		"uvPivot" " -type \"double2\" 5.77374958992004395 0.25841251015663147"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_04|NovaxenosRigSkinned:L_FootClaw_Shape4" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:L_Foot_Claws|NovaxenosRigSkinned:L_FootClaw_04|NovaxenosRigSkinned:L_FootClaw_Shape4" 
+		"uvPivot" " -type \"double2\" 5.66526007652282715 0.95463240146636963"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_01|NovaxenosRigSkinned:R_FootClaw_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_01|NovaxenosRigSkinned:R_FootClaw_Shape1" 
+		"uvPivot" " -type \"double2\" 5.04735708236694336 0.96651709079742432"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_02|NovaxenosRigSkinned:R_FootClaw_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_02|NovaxenosRigSkinned:R_FootClaw_Shape2" 
+		"uvPivot" " -type \"double2\" 5.39595413208007812 0.93137145042419434"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_03|NovaxenosRigSkinned:R_FootClaw_Shape3" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_03|NovaxenosRigSkinned:R_FootClaw_Shape3" 
+		"uvPivot" " -type \"double2\" 5.05362868309020996 0.60270369052886963"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_04|NovaxenosRigSkinned:R_FootClaw_Shape4" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:FootClaws|NovaxenosRigSkinned:R_Foot_Claws|NovaxenosRigSkinned:R_FootClaw_04|NovaxenosRigSkinned:R_FootClaw_Shape4" 
+		"uvPivot" " -type \"double2\" 5.92243623733520508 0.93308287858963013"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_01|NovaxenosRigSkinned:L_BackSpike_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_01|NovaxenosRigSkinned:L_BackSpike_Shape1" 
+		"uvPivot" " -type \"double2\" 5.76060295104980469 0.91883325576782227"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_02|NovaxenosRigSkinned:L_BackSpike_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_02|NovaxenosRigSkinned:L_BackSpike_Shape2" 
+		"uvPivot" " -type \"double2\" 5.25274324417114258 0.7122376561164856"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_03|NovaxenosRigSkinned:L_BackSpike_Shape3" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_03|NovaxenosRigSkinned:L_BackSpike_Shape3" 
+		"uvPivot" " -type \"double2\" 5.18911361694335938 0.15056094527244568"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_04|NovaxenosRigSkinned:L_BackSpike_Shape4" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_04|NovaxenosRigSkinned:L_BackSpike_Shape4" 
+		"uvPivot" " -type \"double2\" 5.52401399612426758 0.56844855844974518"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_05|NovaxenosRigSkinned:L_BackSpike_Shape5" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_05|NovaxenosRigSkinned:L_BackSpike_Shape5" 
+		"uvPivot" " -type \"double2\" 5.77828431129455566 0.41337831318378448"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_06|NovaxenosRigSkinned:L_BackSpike_Shape6" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_06|NovaxenosRigSkinned:L_BackSpike_Shape6" 
+		"uvPivot" " -type \"double2\" 5.45026874542236328 0.81410372257232666"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_07|NovaxenosRigSkinned:L_BackSpike_Shape7" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_07|NovaxenosRigSkinned:L_BackSpike_Shape7" 
+		"uvPivot" " -type \"double2\" 5.45985794067382812 0.074921086430549622"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_08|NovaxenosRigSkinned:L_BackSpike_Shape8" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_08|NovaxenosRigSkinned:L_BackSpike_Shape8" 
+		"uvPivot" " -type \"double2\" 5.86871576309204102 0.22056484222412109"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_09|NovaxenosRigSkinned:L_BackSpike_Shape9" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:L_Back_Spikes|NovaxenosRigSkinned:L_BackSpike_09|NovaxenosRigSkinned:L_BackSpike_Shape9" 
+		"uvPivot" " -type \"double2\" 5.88887429237365723 0.73468798398971558"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_01|NovaxenosRigSkinned:R_BackSpike_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_01|NovaxenosRigSkinned:R_BackSpike_Shape1" 
+		"uvPivot" " -type \"double2\" 5.90462756156921387 0.056017514318227768"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_02|NovaxenosRigSkinned:R_BackSpike_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_02|NovaxenosRigSkinned:R_BackSpike_Shape2" 
+		"uvPivot" " -type \"double2\" 5.68995809555053711 0.78144019842147827"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_03|NovaxenosRigSkinned:R_BackSpike_Shape3" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_03|NovaxenosRigSkinned:R_BackSpike_Shape3" 
+		"uvPivot" " -type \"double2\" 5.18917942047119141 0.44708853960037231"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_04|NovaxenosRigSkinned:R_BackSpike_Shape4" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_04|NovaxenosRigSkinned:R_BackSpike_Shape4" 
+		"uvPivot" " -type \"double2\" 5.5085444450378418 0.29254153370857239"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_05|NovaxenosRigSkinned:R_BackSpike_Shape5" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_05|NovaxenosRigSkinned:R_BackSpike_Shape5" 
+		"uvPivot" " -type \"double2\" 5.72684717178344727 0.11303789913654327"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_06|NovaxenosRigSkinned:R_BackSpike_Shape6" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_06|NovaxenosRigSkinned:R_BackSpike_Shape6" 
+		"uvPivot" " -type \"double2\" 5.82061648368835449 0.61179983615875244"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_07|NovaxenosRigSkinned:R_BackSpike_Shape7" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_07|NovaxenosRigSkinned:R_BackSpike_Shape7" 
+		"uvPivot" " -type \"double2\" 5.08436107635498047 0.86288696527481079"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_08|NovaxenosRigSkinned:R_BackSpike_Shape8" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_08|NovaxenosRigSkinned:R_BackSpike_Shape8" 
+		"uvPivot" " -type \"double2\" 5.86871528625488281 0.85028505325317383"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_09|NovaxenosRigSkinned:R_BackSpike_Shape9" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:BackSpikes|NovaxenosRigSkinned:R_Back_Spikes|NovaxenosRigSkinned:R_BackSpike_09|NovaxenosRigSkinned:R_BackSpike_Shape9" 
+		"uvPivot" " -type \"double2\" 5.29222393035888672 0.86720472574234009"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:L_MouthTendon_01|NovaxenosRigSkinned:L_MouthTendon_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:L_MouthTendon_01|NovaxenosRigSkinned:L_MouthTendon_Shape1" 
+		"uvPivot" " -type \"double2\" 4.52071309089660645 0.46620833873748779"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:L_MouthTendon_02|NovaxenosRigSkinned:L_MouthTendon_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:L_MouthTendon_02|NovaxenosRigSkinned:L_MouthTendon_Shape2" 
+		"uvPivot" " -type \"double2\" 4.18482637405395508 0.32735410332679749"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:R_MouthTendon_01|NovaxenosRigSkinned:R_MouthTendon_Shape1" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:R_MouthTendon_01|NovaxenosRigSkinned:R_MouthTendon_Shape1" 
+		"uvPivot" " -type \"double2\" 4.53411340713500977 0.15194240212440491"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:R_MouthTendon_02|NovaxenosRigSkinned:R_MouthTendon_Shape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:MouthTendons1|NovaxenosRigSkinned:R_MouthTendon_02|NovaxenosRigSkinned:R_MouthTendon_Shape2" 
+		"uvPivot" " -type \"double2\" 4.39736723899841309 0.74979114532470703"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface2|NovaxenosRigSkinned:polySurfaceShape2" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface2|NovaxenosRigSkinned:polySurfaceShape2" 
+		"uvPivot" " -type \"double2\" 5.55901169776916504 0.038855582475662231"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface4|NovaxenosRigSkinned:polySurfaceShape4" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface4|NovaxenosRigSkinned:polySurfaceShape4" 
+		"uvPivot" " -type \"double2\" 5.18347477912902832 0.04622572660446167"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface5|NovaxenosRigSkinned:polySurfaceShape5" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface5|NovaxenosRigSkinned:polySurfaceShape5" 
+		"uvPivot" " -type \"double2\" 5.38688492774963379 0.014030873775482178"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface6|NovaxenosRigSkinned:polySurfaceShape6" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface6|NovaxenosRigSkinned:polySurfaceShape6" 
+		"uvPivot" " -type \"double2\" 5.43259906768798828 0.016496598720550537"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface7|NovaxenosRigSkinned:polySurfaceShape7" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface7|NovaxenosRigSkinned:polySurfaceShape7" 
+		"uvPivot" " -type \"double2\" 5.58890032768249512 0.017622858285903931"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface8|NovaxenosRigSkinned:polySurfaceShape8" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface8|NovaxenosRigSkinned:polySurfaceShape8" 
+		"uvPivot" " -type \"double2\" 5.41787576675415039 0.030875175725668669"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface9|NovaxenosRigSkinned:polySurfaceShape9" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface9|NovaxenosRigSkinned:polySurfaceShape9" 
+		"uvPivot" " -type \"double2\" 5.56263208389282227 0.067750275135040283"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface10|NovaxenosRigSkinned:polySurfaceShape10" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface10|NovaxenosRigSkinned:polySurfaceShape10" 
+		"uvPivot" " -type \"double2\" 5.49923896789550781 0.056742370128631592"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface11|NovaxenosRigSkinned:polySurfaceShape11" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface11|NovaxenosRigSkinned:polySurfaceShape11" 
+		"uvPivot" " -type \"double2\" 5.48699855804443359 0.021468520164489746"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface12|NovaxenosRigSkinned:polySurfaceShape12" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface12|NovaxenosRigSkinned:polySurfaceShape12" 
+		"uvPivot" " -type \"double2\" 5.77017045021057129 0.044101893901824951"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface13|NovaxenosRigSkinned:polySurfaceShape13" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface13|NovaxenosRigSkinned:polySurfaceShape13" 
+		"uvPivot" " -type \"double2\" 5.51033425331115723 0.0098534524440765381"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface14|NovaxenosRigSkinned:polySurfaceShape14" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface14|NovaxenosRigSkinned:polySurfaceShape14" 
+		"uvPivot" " -type \"double2\" 5.36315774917602539 0.015827596187591553"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface15|NovaxenosRigSkinned:polySurfaceShape15" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface15|NovaxenosRigSkinned:polySurfaceShape15" 
+		"uvPivot" " -type \"double2\" 5.8065035343170166 0.020738571882247925"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface16|NovaxenosRigSkinned:polySurfaceShape16" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface16|NovaxenosRigSkinned:polySurfaceShape16" 
+		"uvPivot" " -type \"double2\" 5.45388031005859375 0.029143378138542175"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface17|NovaxenosRigSkinned:polySurfaceShape17" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface17|NovaxenosRigSkinned:polySurfaceShape17" 
+		"uvPivot" " -type \"double2\" 5.67412710189819336 0.071160018444061279"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface18|NovaxenosRigSkinned:polySurfaceShape18" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:TopTeeth|NovaxenosRigSkinned:polySurface18|NovaxenosRigSkinned:polySurfaceShape18" 
+		"uvPivot" " -type \"double2\" 5.69727206230163574 0.044905751943588257"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface20|NovaxenosRigSkinned:polySurfaceShape20" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface20|NovaxenosRigSkinned:polySurfaceShape20" 
+		"uvPivot" " -type \"double2\" 5.53962612152099609 0.0274476557970047"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface21|NovaxenosRigSkinned:polySurfaceShape21" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface21|NovaxenosRigSkinned:polySurfaceShape21" 
+		"uvPivot" " -type \"double2\" 5.4151759147644043 0.0098390877246856689"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface22|NovaxenosRigSkinned:polySurfaceShape22" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface22|NovaxenosRigSkinned:polySurfaceShape22" 
+		"uvPivot" " -type \"double2\" 5.447723388671875 0.021666340529918671"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface23|NovaxenosRigSkinned:polySurfaceShape23" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface23|NovaxenosRigSkinned:polySurfaceShape23" 
+		"uvPivot" " -type \"double2\" 5.44716453552246094 0.023757919669151306"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface24|NovaxenosRigSkinned:polySurfaceShape24" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface24|NovaxenosRigSkinned:polySurfaceShape24" 
+		"uvPivot" " -type \"double2\" 5.41923117637634277 0.024119332432746887"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface25|NovaxenosRigSkinned:polySurfaceShape25" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface25|NovaxenosRigSkinned:polySurfaceShape25" 
+		"uvPivot" " -type \"double2\" 5.46837759017944336 0.062870800495147705"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface26|NovaxenosRigSkinned:polySurfaceShape26" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface26|NovaxenosRigSkinned:polySurfaceShape26" 
+		"uvPivot" " -type \"double2\" 5.47261929512023926 0.065301254391670227"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface27|NovaxenosRigSkinned:polySurfaceShape27" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface27|NovaxenosRigSkinned:polySurfaceShape27" 
+		"uvPivot" " -type \"double2\" 5.69727206230163574 0.030280157923698425"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface28|NovaxenosRigSkinned:polySurfaceShape28" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface28|NovaxenosRigSkinned:polySurfaceShape28" 
+		"uvPivot" " -type \"double2\" 5.22404980659484863 0.021263919770717621"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface29|NovaxenosRigSkinned:polySurfaceShape29" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface29|NovaxenosRigSkinned:polySurfaceShape29" 
+		"uvPivot" " -type \"double2\" 5.67249035835266113 0.033115476369857788"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface30|NovaxenosRigSkinned:polySurfaceShape30" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface30|NovaxenosRigSkinned:polySurfaceShape30" 
+		"uvPivot" " -type \"double2\" 5.29570817947387695 0.017016500234603882"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface31|NovaxenosRigSkinned:polySurfaceShape31" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface31|NovaxenosRigSkinned:polySurfaceShape31" 
+		"uvPivot" " -type \"double2\" 5.39916443824768066 0.016223013401031494"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface32|NovaxenosRigSkinned:polySurfaceShape32" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface32|NovaxenosRigSkinned:polySurfaceShape32" 
+		"uvPivot" " -type \"double2\" 5.56177163124084473 0.0098361968994140625"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface33|NovaxenosRigSkinned:polySurfaceShape33" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Teeth|NovaxenosRigSkinned:BottomTeeth|NovaxenosRigSkinned:polySurface33|NovaxenosRigSkinned:polySurfaceShape33" 
+		"uvPivot" " -type \"double2\" 5.62223410606384277 0.034910306334495544"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Jaws|NovaxenosRigSkinned:UpperJaw|NovaxenosRigSkinned:UpperJawShape" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Jaws|NovaxenosRigSkinned:UpperJaw|NovaxenosRigSkinned:UpperJawShape" 
+		"uvPivot" " -type \"double2\" 4.62096261978149414 0.46792778372764587"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Jaws|NovaxenosRigSkinned:LowerJaw|NovaxenosRigSkinned:LowerJawShape" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Jaws|NovaxenosRigSkinned:LowerJaw|NovaxenosRigSkinned:LowerJawShape" 
+		"uvPivot" " -type \"double2\" 4.6136014461517334 0.34406052529811859"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Eyes|NovaxenosRigSkinned:L_Eye|NovaxenosRigSkinned:L_EyeShape" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Eyes|NovaxenosRigSkinned:L_Eye|NovaxenosRigSkinned:L_EyeShape" 
+		"uvPivot" " -type \"double2\" 6.2501220703125 0.49999997019767761"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Eyes|NovaxenosRigSkinned:R_Eye|NovaxenosRigSkinned:R_EyeShape" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:Eyes|NovaxenosRigSkinned:R_Eye|NovaxenosRigSkinned:R_EyeShape" 
+		"uvPivot" " -type \"double2\" 6.7498779296875 0.5"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:NovaxenosBody_Retopo|NovaxenosRigSkinned:NovaxenosBody_RetopoShape" 
+		"visibility" " -k 0 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Geometry|NovaxenosRigSkinned:NovaxenosBody_Retopo|NovaxenosRigSkinned:NovaxenosBody_RetopoShape" 
+		"uvPivot" " -type \"double2\" 2.00111290812492371 0.5"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:L_Upper_Limb_01_Jnt_IK" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:L_Upper_Limb_01_Jnt_IK|NovaxenosRigSkinned:L_Upper_Limb_02_Jnt_IK" 
+		"rotate" " -type \"double3\" 0 0 0.0043594690483043626"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:R_Upper_Limb_01_Jnt_IK" 
+		"rotate" " -type \"double3\" -5.3656564107227444e-05 -3.3757386237673601e-05 0"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:R_Upper_Limb_01_Jnt_IK|NovaxenosRigSkinned:R_Upper_Limb_02_Jnt_IK" 
+		"rotate" " -type \"double3\" 6.6835857962429782e-07 -1.0124172530976458e-06 0.0086428578527980859"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:L_Arm_01_Jnt_IK" 
+		"rotate" " -type \"double3\" -0.029759689675629537 -0.02350652053290957 -0.036275643136802614"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:L_Arm_01_Jnt_IK|NovaxenosRigSkinned:L_Arm_02_Jnt_IK" 
+		"rotate" " -type \"double3\" -0.00016562938324968924 -3.26753527017993e-05 0.025733703651567897"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:R_Arm_01_Jnt_IK" 
+		"rotate" " -type \"double3\" -0.03079523496069728 -0.024399590787857986 0.0032246057151480564"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Spine_01_Jnt|NovaxenosRigSkinned:Spine_02_Jnt|NovaxenosRigSkinned:Spine_03_Jnt|NovaxenosRigSkinned:Spine_04_Jnt|NovaxenosRigSkinned:R_Arm_01_Jnt_IK|NovaxenosRigSkinned:R_Arm_02_Jnt_IK" 
+		"rotate" " -type \"double3\" 0.00014139698252771675 0.00010325231280517344 -0.021942381260252695"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK" 
+		"rotate" " -type \"double3\" 12.13192799194445293 -1.94400576469570452 -49.85957957073994606"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK" 
+		"rotate" " -type \"double3\" -1.54321538942026604 0.43048314329147636 31.1714565937652317"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK" 
+		"rotate" " -type \"double3\" 0.41993952888206826 -1.27526771579815912 -30.5988020545937438"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK|NovaxenosRigSkinned:L_Leg_04_Jnt_IK|NovaxenosRigSkinned:L_Foot_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.87006909247101161 5.14649497842643999 22.27470168652511973"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK|NovaxenosRigSkinned:L_Leg_04_Jnt_IK|NovaxenosRigSkinned:L_Foot_IK_Jnt|NovaxenosRigSkinned:L_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_02_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 10.61331480190079724 -3.70320569477440698 -12.07420251473195449"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK|NovaxenosRigSkinned:L_Leg_04_Jnt_IK|NovaxenosRigSkinned:L_Foot_IK_Jnt|NovaxenosRigSkinned:L_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_02_Knuckle_01_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_02_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 3.34558903418651843 9.12222546476016483 39.63529863199381964"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK|NovaxenosRigSkinned:L_Leg_04_Jnt_IK|NovaxenosRigSkinned:L_Foot_IK_Jnt|NovaxenosRigSkinned:L_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_03_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.43925112907631003 -0.15894674779862172 -3.46467606876346812"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK|NovaxenosRigSkinned:L_Leg_04_Jnt_IK|NovaxenosRigSkinned:L_Foot_IK_Jnt|NovaxenosRigSkinned:L_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_03_Knuckle_01_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_03_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 1.35663070902842775 -0.40217078571832748 36.73847644207213392"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK|NovaxenosRigSkinned:L_Leg_04_Jnt_IK|NovaxenosRigSkinned:L_Foot_IK_Jnt|NovaxenosRigSkinned:L_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_04_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -7.08831956381825368 3.15780707990825871 -10.04899153201762552"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:L_Leg_01_Jnt_IK|NovaxenosRigSkinned:L_Leg_02_Jnt_IK|NovaxenosRigSkinned:L_Leg_03_Jnt_IK|NovaxenosRigSkinned:L_Leg_04_Jnt_IK|NovaxenosRigSkinned:L_Foot_IK_Jnt|NovaxenosRigSkinned:L_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_04_Knuckle_01_IK_Jnt|NovaxenosRigSkinned:L_Foot_Finger_04_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.21638759976935804 -7.73329840330665963 38.04543299663205147"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK" 
+		"rotate" " -type \"double3\" -10.40027420649048295 -3.37638666937156318 23.94660164787441659"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK" 
+		"rotate" " -type \"double3\" -0.76387799479366392 0.099487662954162268 14.84648968504020949"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK" 
+		"rotate" " -type \"double3\" 0.11439993825937549 -0.63509886572501251 -14.57032536078945206"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK|NovaxenosRigSkinned:R_Leg_04_Jnt_IK|NovaxenosRigSkinned:R_Foot_IK_Jnt" 
+		"rotate" " -type \"double3\" 3.1276073726150786 6.13386437872050383 -38.46443467299418728"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK|NovaxenosRigSkinned:R_Leg_04_Jnt_IK|NovaxenosRigSkinned:R_Foot_IK_Jnt|NovaxenosRigSkinned:R_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_04_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -2.90385458214435888 1.45196108286564196 -3.71269474866239069"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK|NovaxenosRigSkinned:R_Leg_04_Jnt_IK|NovaxenosRigSkinned:R_Foot_IK_Jnt|NovaxenosRigSkinned:R_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_04_Knuckle_01_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_04_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.23485931061088122 -2.10645832344918382 13.81525663891410005"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK|NovaxenosRigSkinned:R_Leg_04_Jnt_IK|NovaxenosRigSkinned:R_Foot_IK_Jnt|NovaxenosRigSkinned:R_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_03_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.12627810073850537 0.046689780398832245 -0.70152705767416768"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK|NovaxenosRigSkinned:R_Leg_04_Jnt_IK|NovaxenosRigSkinned:R_Foot_IK_Jnt|NovaxenosRigSkinned:R_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_03_Knuckle_01_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_03_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -1.31885659829442314 0.10619370809809374 12.02838732546232769"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK|NovaxenosRigSkinned:R_Leg_04_Jnt_IK|NovaxenosRigSkinned:R_Foot_IK_Jnt|NovaxenosRigSkinned:R_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_02_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 3.60059066518564652 -1.58887549679363693 -3.84405781722718132"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:R_Leg_01_Jnt_IK|NovaxenosRigSkinned:R_Leg_02_Jnt_IK|NovaxenosRigSkinned:R_Leg_03_Jnt_IK|NovaxenosRigSkinned:R_Leg_04_Jnt_IK|NovaxenosRigSkinned:R_Foot_IK_Jnt|NovaxenosRigSkinned:R_Foot_Ball_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_02_Knuckle_01_IK_Jnt|NovaxenosRigSkinned:R_Foot_Finger_02_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -2.10264551135412248 3.04147887283167906 14.2164713024264433"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.26209464530061144 -0.67479195505722134 -3.27238882341759352"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.52593354650225455 -2.41497490898478739 -10.96874258181047423"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.38709466805654635 -2.78278765827979502 -11.84982626017574603"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.46435962229811034 -3.37790340977184522 -14.5083745800202415"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt" 
+		"rotate" " -type \"double3\" 8.4249861124444943e-05 0.029801769540470573 0.34961356390967863"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.1869302045940483 2.25672169137026213 9.4947537328703433"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.24199438116814304 2.53289005549591684 10.93895286271581213"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.19073209204924549 2.25398713598660683 9.69810731493122269"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.18082144964192204 2.19580398469260674 9.43973755646578283"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.11314503036184634 1.74002391177056226 7.46593441361574417"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.046546444119569409 1.11749630994308236 4.79577266396813506"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt|NovaxenosRigSkinned:Tail_12_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.020147716857444129 0.73989157489834012 3.14524982336644454"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt|NovaxenosRigSkinned:Tail_12_IK_Jnt|NovaxenosRigSkinned:Tail_13_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.030218381018801855 0.5879289376361162 3.65204529612541595"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt|NovaxenosRigSkinned:Tail_12_IK_Jnt|NovaxenosRigSkinned:Tail_13_IK_Jnt|NovaxenosRigSkinned:Tail_14_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.021936079946261598 0.5402838558699542 2.41744288376731697"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt|NovaxenosRigSkinned:Tail_12_IK_Jnt|NovaxenosRigSkinned:Tail_13_IK_Jnt|NovaxenosRigSkinned:Tail_14_IK_Jnt|NovaxenosRigSkinned:Tail_15_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.014767488416581829 0.43302135174911138 1.67392216315149445"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt|NovaxenosRigSkinned:Tail_12_IK_Jnt|NovaxenosRigSkinned:Tail_13_IK_Jnt|NovaxenosRigSkinned:Tail_14_IK_Jnt|NovaxenosRigSkinned:Tail_15_IK_Jnt|NovaxenosRigSkinned:Tail_16_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.0072763315491558567 0.27802320952162873 0.76585813489313626"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt|NovaxenosRigSkinned:Tail_12_IK_Jnt|NovaxenosRigSkinned:Tail_13_IK_Jnt|NovaxenosRigSkinned:Tail_14_IK_Jnt|NovaxenosRigSkinned:Tail_15_IK_Jnt|NovaxenosRigSkinned:Tail_16_IK_Jnt|NovaxenosRigSkinned:Tail_17_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.00055097103109892187 -0.032795542599362258 -0.30752604745878537"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Skeleton|NovaxenosRigSkinned:Root_Jnt|NovaxenosRigSkinned:COG_Jnt|NovaxenosRigSkinned:Hip_Jnt|NovaxenosRigSkinned:Tail_01_IK_Jnt|NovaxenosRigSkinned:Tail_02_IK_Jnt|NovaxenosRigSkinned:Tail_03_IK_Jnt|NovaxenosRigSkinned:Tail_04_IK_Jnt|NovaxenosRigSkinned:Tail_05_IK_Jnt|NovaxenosRigSkinned:Tail_06_IK_Jnt|NovaxenosRigSkinned:Tail_07_IK_Jnt|NovaxenosRigSkinned:Tail_08_IK_Jnt|NovaxenosRigSkinned:Tail_09_IK_Jnt|NovaxenosRigSkinned:Tail_10_IK_Jnt|NovaxenosRigSkinned:Tail_11_IK_Jnt|NovaxenosRigSkinned:Tail_12_IK_Jnt|NovaxenosRigSkinned:Tail_13_IK_Jnt|NovaxenosRigSkinned:Tail_14_IK_Jnt|NovaxenosRigSkinned:Tail_15_IK_Jnt|NovaxenosRigSkinned:Tail_16_IK_Jnt|NovaxenosRigSkinned:Tail_17_IK_Jnt|NovaxenosRigSkinned:Tail_18_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.0006105645068844041 -0.49860092874921674 -2.09218181175129292"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Transform_Ctrl_Grp|NovaxenosRigSkinned:Transform_Ctrl" 
+		"MasterScale" " -k 1"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Transform_Ctrl_Grp|NovaxenosRigSkinned:Transform_Ctrl" 
 		"TailIKFK" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Hip_FK_Ctrl_Grp|NovaxenosRigSkinned:Hip_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Hip_FK_Ctrl_Grp|NovaxenosRigSkinned:Hip_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Neck_Head_FK_Ctrl_Grp|NovaxenosRigSkinned:Head_Ctrl_Grp|NovaxenosRigSkinned:Head_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Neck_Head_FK_Ctrl_Grp|NovaxenosRigSkinned:Head_Ctrl_Grp|NovaxenosRigSkinned:Head_Ctrl" 
-		"FollowRotate" " -k 1"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:COG_Ctrl_Grp|NovaxenosRigSkinned:COG_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Neck_Head_FK_Ctrl_Grp|NovaxenosRigSkinned:Lower_Jaw_Ctrl_Grp|NovaxenosRigSkinned:Lower_Jaw_Ctrl" 
 		"blendUpperJawCtrl" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Upper_Limbs_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_01_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_01_FK_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Upper_Limbs_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_01_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Upper_Limb_01_FK_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Upper_Limbs_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_01_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_01_FK_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Upper_Limbs_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_01_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Upper_Limb_01_FK_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_01_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_01_FK_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_01_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Arm_01_FK_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_02_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_01_Knuckle_02_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_02_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_02_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_03_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_02_Knuckle_03_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_02_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_01_Ctrl" 
 		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_02_Ctrl" 
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_01_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_01_Ctrl" 
 		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_03_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_03_Knuckle_03_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_02_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_02_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_03_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:L_Hand_Finger_04_Knuckle_03_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_02_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_01_Knuckle_02_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_02_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_02_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_03_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_02_Knuckle_03_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_02_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_02_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_03_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_03_Knuckle_03_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_02_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_02_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_02_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_03_Ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Arms_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_FK_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_03_Ctrl_Grp|NovaxenosRigSkinned:R_Hand_Finger_04_Knuckle_03_Ctrl" 
-		"FollowRotate" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl" 
-		"Follow" " -k 1"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl" 
 		"Foot_Roll" " -k 1"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl" 
-		"Foot_Bank" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl" 
-		"Heel_Twist" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl" 
-		"Toe_Twist" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl" 
 		"Toe_Tap" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl" 
-		"Follow" " -k 1 3"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl" 
-		"Follow" " -k 1"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl" 
 		"Foot_Roll" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl" 
-		"Foot_Bank" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl" 
-		"Heel_Twist" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl" 
-		"Toe_Twist" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl" 
-		"Toe_Tap" " -k 1"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl" 
-		"Follow" " -k 1 3"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl|NovaxenosRigSkinned:R_Outer_Bank_Grp|NovaxenosRigSkinned:R_Inner_Bank_Grp|NovaxenosRigSkinned:R_Foot_Rev_Heel_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Toe_Jnt" 
+		"inverseScaleX" " 0.99999999999999978"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl|NovaxenosRigSkinned:R_Outer_Bank_Grp|NovaxenosRigSkinned:R_Inner_Bank_Grp|NovaxenosRigSkinned:R_Foot_Rev_Heel_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Toe_Jnt" 
+		"inverseScaleY" " 1.00000000000000022"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl|NovaxenosRigSkinned:R_Outer_Bank_Grp|NovaxenosRigSkinned:R_Inner_Bank_Grp|NovaxenosRigSkinned:R_Foot_Rev_Heel_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Toe_Jnt" 
+		"inverseScaleZ" " 0.99999999999999978"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl|NovaxenosRigSkinned:R_Outer_Bank_Grp|NovaxenosRigSkinned:R_Inner_Bank_Grp|NovaxenosRigSkinned:R_Foot_Rev_Heel_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Toe_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Ball_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Ankle_Jnt" 
+		"inverseScaleX" " 0.99999999999999978"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl|NovaxenosRigSkinned:R_Outer_Bank_Grp|NovaxenosRigSkinned:R_Inner_Bank_Grp|NovaxenosRigSkinned:R_Foot_Rev_Heel_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Toe_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Ball_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Ankle_Jnt" 
+		"inverseScaleY" " 1.00000000000000022"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl|NovaxenosRigSkinned:R_Outer_Bank_Grp|NovaxenosRigSkinned:R_Inner_Bank_Grp|NovaxenosRigSkinned:R_Foot_Rev_Heel_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Toe_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Ball_Jnt|NovaxenosRigSkinned:R_Foot_Rev_Ankle_Jnt" 
+		"inverseScaleZ" " 0.99999999999999978"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl" 
 		"FollowTranslate" " -k 1"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl" 
@@ -1119,7 +1507,7 @@ createNode reference -n "NovaxenosRigSkinnedRN";
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl" 
 		"visibility" " 1"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl" 
-		"translate" " -type \"double3\" 1.47225683927820605 -0.22209366158612939 0"
+		"translate" " -type \"double3\" 1 0 0"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl" 
@@ -1127,7 +1515,21 @@ createNode reference -n "NovaxenosRigSkinnedRN";
 		
 		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_06_Ctrl" 
 		"Follow" " -k 1 3"
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Deformers|NovaxenosRigSkinned:Limb_Twist_Loc_Grp|NovaxenosRigSkinned:L_Upper_Arm_Twist_Aim_Grp|NovaxenosRigSkinned:L_Upper_Arm_Twist_IK_Jnt_Grp|NovaxenosRigSkinned:L_Upper_Arm_Twist_IK_Jnt_Grp|NovaxenosRigSkinned:L_Upper_Arm_Twist_IK_01_Joint" 
+		"rotate" " -type \"double3\" -15.69866230373825999 -15.93834554729827424 -13.22660678809689294"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Deformers|NovaxenosRigSkinned:Limb_Twist_Loc_Grp|NovaxenosRigSkinned:R_Upper_Arm_Twist_Aim_Grp|NovaxenosRigSkinned:R_Upper_Arm_Twist_IK_Jnt_Grp|NovaxenosRigSkinned:R_Upper_Arm_Twist_IK_Jnt_Grp|NovaxenosRigSkinned:R_Upper_Arm_Twist_IK_01_Jnt" 
+		"rotate" " -type \"double3\" 0.71336702098903815 1.76938771023496511 -2.06810926149738883"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Deformers|NovaxenosRigSkinned:Tail_IK_Curve_Grp|NovaxenosRigSkinned:Tail_ikHandle" 
+		"translate" " -type \"double3\" -0.031188555347317497 -0.43070089671482775 -2.94817821408308278"
+		
+		2 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Deformers|NovaxenosRigSkinned:Tail_IK_Curve_Grp|NovaxenosRigSkinned:Tail_ikHandle" 
+		"rotate" " -type \"double3\" 100.86445002624505207 64.59500326096434719 -79.6179633015970154"
+		
 		2 "NovaxenosRigSkinned:Geo" "displayType" " 2"
+		2 "NovaxenosRigSkinned:Geo" "visibility" " 1"
+		2 "NovaxenosRigSkinned:Joints" "visibility" " 0"
 		2 "NovaxenosRigSkinned:Ctrls" "visibility" " 1"
 		3 "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Neck_Head_FK_Ctrl_Grp|NovaxenosRigSkinned:Upper_Jaw_Ctrl_Grp|NovaxenosRigSkinned:Upper_Jaw_Ctrl.ExtendMouth" 
 		"|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Neck_Head_FK_Ctrl_Grp|NovaxenosRigSkinned:Lower_Jaw_Ctrl_Grp|NovaxenosRigSkinned:Lower_Jaw_Ctrl.translateX" 
@@ -2209,516 +2611,560 @@ createNode reference -n "NovaxenosRigSkinnedRN";
 		"NovaxenosRigSkinnedRN.placeHolderList[537]" ""
 		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[538]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Follow" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.Follow" 
 		"NovaxenosRigSkinnedRN.placeHolderList[539]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Foot_Roll" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[540]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Foot_Bank" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[541]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Heel_Twist" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[542]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Toe_Twist" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[543]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Toe_Tap" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[544]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[545]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[546]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[547]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[548]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:L_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:L_Leg_PV_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[549]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Follow" 
 		"NovaxenosRigSkinnedRN.placeHolderList[550]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Foot_Roll" 
 		"NovaxenosRigSkinnedRN.placeHolderList[551]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Foot_Bank" 
 		"NovaxenosRigSkinnedRN.placeHolderList[552]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Heel_Twist" 
 		"NovaxenosRigSkinnedRN.placeHolderList[553]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Toe_Twist" 
 		"NovaxenosRigSkinnedRN.placeHolderList[554]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.Toe_Tap" 
 		"NovaxenosRigSkinnedRN.placeHolderList[555]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[556]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[557]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[558]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[559]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[560]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[561]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[562]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[563]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[564]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[565]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.Follow" 
 		"NovaxenosRigSkinnedRN.placeHolderList[566]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[567]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[568]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[569]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[570]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[571]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[572]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[573]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[574]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[575]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Legs_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_IK_Main_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp|NovaxenosRigSkinned:R_Leg_PV_Ctrl_Grp_Offset|NovaxenosRigSkinned:R_Leg_PV_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[576]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[577]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[578]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[579]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[580]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[581]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[582]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[583]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[584]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[585]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[586]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[587]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl_Grp|NovaxenosRigSkinned:Tail_01_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[588]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[589]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[590]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[591]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[592]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[593]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[594]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[595]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[596]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[597]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[598]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[599]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl_Grp|NovaxenosRigSkinned:Tail_02_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[600]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[601]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[602]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[603]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[604]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[605]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[606]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[607]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[608]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[609]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[610]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[611]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_03_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[612]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[613]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[614]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[615]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[616]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[617]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[618]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[619]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[620]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[621]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[622]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[623]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl_Grp|NovaxenosRigSkinned:Tail_04_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[624]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[625]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[626]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[627]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[628]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[629]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[630]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[631]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[632]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[633]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[634]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[635]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl_Grp|NovaxenosRigSkinned:Tail_05_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[636]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[637]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[638]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[639]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[640]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[641]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[642]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[643]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[644]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[645]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[646]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[647]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl_Grp|NovaxenosRigSkinned:Tail_06_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[648]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[649]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[650]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[651]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[652]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[653]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[654]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[655]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[656]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[657]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[658]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[659]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl_Grp|NovaxenosRigSkinned:Tail_07_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[660]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[661]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[662]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[663]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[664]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[665]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[666]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[667]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[668]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[669]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[670]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[671]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl_Grp|NovaxenosRigSkinned:Tail_08_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[672]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[673]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[674]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[675]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[676]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[677]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[678]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[679]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[680]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[681]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[682]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[683]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl_Grp|NovaxenosRigSkinned:Tail_09_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[684]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[685]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[686]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[687]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[688]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[689]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[690]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[691]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[692]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[693]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[694]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[695]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl_Grp|NovaxenosRigSkinned:Tail_10_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[696]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[697]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[698]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[699]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[700]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[701]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[702]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[703]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[704]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[705]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[706]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[707]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl_Grp|NovaxenosRigSkinned:Tail_11_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[708]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[709]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[710]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[711]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[712]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[713]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[714]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[715]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[716]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[717]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[718]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[719]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl_Grp|NovaxenosRigSkinned:Tail_12_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[720]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[721]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[722]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[723]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[724]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[725]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[726]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[727]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[728]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[729]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[730]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[731]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl_Grp|NovaxenosRigSkinned:Tail_13_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[732]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[733]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[734]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[735]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[736]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[737]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[738]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[739]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[740]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[741]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[742]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[743]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl_Grp|NovaxenosRigSkinned:Tail_14_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[744]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[745]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[746]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[747]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[748]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[749]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[750]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[751]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[752]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[753]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[754]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[755]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl_Grp|NovaxenosRigSkinned:Tail_15_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[756]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[757]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[758]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[759]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[760]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[761]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[762]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[763]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[764]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[765]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[766]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[767]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl_Grp|NovaxenosRigSkinned:Tail_16_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[768]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[769]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[770]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.FollowTranslate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[771]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.FollowRotate" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[772]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[773]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[774]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[775]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[776]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[777]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[778]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[779]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl_Grp|NovaxenosRigSkinned:Tail_17_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[780]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.FollowTranslate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[781]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.visibility" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.FollowRotate" 
 		"NovaxenosRigSkinnedRN.placeHolderList[782]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.Follow" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.translateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[783]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.translateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.translateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[784]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.translateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.translateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[785]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.translateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.rotateZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[786]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.rotateX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.rotateX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[787]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.rotateY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.rotateY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[788]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.rotateZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.scaleX" 
 		"NovaxenosRigSkinnedRN.placeHolderList[789]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.scaleX" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.scaleY" 
 		"NovaxenosRigSkinnedRN.placeHolderList[790]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.scaleY" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.scaleZ" 
 		"NovaxenosRigSkinnedRN.placeHolderList[791]" ""
-		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.scaleZ" 
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl_Grp|NovaxenosRigSkinned:Tail_18_Ctrl.visibility" 
 		"NovaxenosRigSkinnedRN.placeHolderList[792]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.FollowTranslate" 
+		"NovaxenosRigSkinnedRN.placeHolderList[793]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.FollowRotate" 
+		"NovaxenosRigSkinnedRN.placeHolderList[794]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.translateX" 
+		"NovaxenosRigSkinnedRN.placeHolderList[795]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.translateY" 
+		"NovaxenosRigSkinnedRN.placeHolderList[796]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.translateZ" 
+		"NovaxenosRigSkinnedRN.placeHolderList[797]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.rotateZ" 
+		"NovaxenosRigSkinnedRN.placeHolderList[798]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.rotateX" 
+		"NovaxenosRigSkinnedRN.placeHolderList[799]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.rotateY" 
+		"NovaxenosRigSkinnedRN.placeHolderList[800]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.scaleX" 
+		"NovaxenosRigSkinnedRN.placeHolderList[801]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.scaleY" 
+		"NovaxenosRigSkinnedRN.placeHolderList[802]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.scaleZ" 
+		"NovaxenosRigSkinnedRN.placeHolderList[803]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_FK_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl_Grp|NovaxenosRigSkinned:Tail_19_Ctrl.visibility" 
+		"NovaxenosRigSkinnedRN.placeHolderList[804]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.Follow" 
+		"NovaxenosRigSkinnedRN.placeHolderList[805]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.translateX" 
+		"NovaxenosRigSkinnedRN.placeHolderList[806]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.translateY" 
+		"NovaxenosRigSkinnedRN.placeHolderList[807]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.translateZ" 
+		"NovaxenosRigSkinnedRN.placeHolderList[808]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.rotateX" 
+		"NovaxenosRigSkinnedRN.placeHolderList[809]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.rotateY" 
+		"NovaxenosRigSkinnedRN.placeHolderList[810]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.rotateZ" 
+		"NovaxenosRigSkinnedRN.placeHolderList[811]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.scaleX" 
+		"NovaxenosRigSkinnedRN.placeHolderList[812]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.scaleY" 
+		"NovaxenosRigSkinnedRN.placeHolderList[813]" ""
+		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.scaleZ" 
+		"NovaxenosRigSkinnedRN.placeHolderList[814]" ""
 		5 4 "NovaxenosRigSkinnedRN" "|NovaxenosRigSkinned:NovaXenos|NovaxenosRigSkinned:Controls|NovaxenosRigSkinned:Tail_IK_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl_Grp|NovaxenosRigSkinned:Tail_IK_03_Ctrl.visibility" 
-		"NovaxenosRigSkinnedRN.placeHolderList[793]" "";
+		"NovaxenosRigSkinnedRN.placeHolderList[815]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode ikSpringSolver -s -n "ikSpringSolver";
@@ -2729,17 +3175,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 905\n            -height 518\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 905\n            -height 512\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n"
 		+ "            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n"
-		+ "            -width 904\n            -height 517\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n"
+		+ "            -width 904\n            -height 511\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n"
 		+ "            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n"
 		+ "            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n"
-		+ "            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 905\n            -height 517\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n"
+		+ "            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 905\n            -height 511\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n"
 		+ "            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n"
 		+ "            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n"
-		+ "            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1816\n            -height 1080\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1816\n            -height 1068\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n"
 		+ "            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
 		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
@@ -2766,13 +3212,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
 		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
 		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1816\\n    -height 1080\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1816\\n    -height 1080\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1816\\n    -height 1068\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1816\\n    -height 1068\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "409C2AD6-415C-D620-4811-3E8D37506C90";
-	setAttr ".b" -type "string" "playbackOptions -min 0 -max 39 -ast 0 -aet 50 ";
+	setAttr ".b" -type "string" "playbackOptions -min 0 -max 40 -ast 0 -aet 50 ";
 	setAttr ".st" 6;
 createNode animCurveTL -n "L_Leg_IK_Ctrl_translateX";
 	rename -uid "6EEA0186-4CEB-3A91-444E-DC8211193F27";
@@ -2803,7 +3249,7 @@ createNode animCurveTL -n "L_Leg_IK_Ctrl_translateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 10 ".ktv[0:9]"  0 -1.1 2 -1.0250368654944435 5 -0.24466515368609842
-		 10 0.5 15 0.7 20 0.7 25 -0.11 30 -0.55 35 -0.9 40 -1.1;
+		 10 0.5 15 0.7 20 0.8 25 -0.11 30 -0.55 35 -0.9 40 -1.1;
 	setAttr -s 10 ".kit[9]"  1;
 	setAttr -s 10 ".kot[9]"  1;
 	setAttr -s 10 ".kix[9]"  1;
@@ -2906,8 +3352,8 @@ createNode animCurveTU -n "L_Leg_IK_Ctrl_Foot_Roll";
 	rename -uid "95A4CBAD-4DB0-93D6-3271-4EB5FC13437D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  0 -20 2 -17.48 5 0 10 0 15 15 20 0 25 -8
-		 30 -16 35 -20 40 -20;
+	setAttr -s 10 ".ktv[0:9]"  0 -25 2 -17.48 5 0 10 0 15 5 20 -10 25 -12
+		 30 -16 35 -20 40 -25;
 	setAttr -s 10 ".kit[9]"  1;
 	setAttr -s 10 ".kot[9]"  1;
 	setAttr -s 10 ".kix[9]"  1;
@@ -2996,18 +3442,18 @@ createNode animCurveTL -n "R_Leg_IK_Ctrl_translateZ";
 	rename -uid "151072EC-4A3E-94EF-E13C-5DB89E5F7E67";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  0 0.7 5 -0.10974761955058066 10 -0.55 15 -0.9
-		 20 -1.1 22 -1.0250368654944435 25 -0.245 30 0.5 35 0.7 40 0.7;
+	setAttr -s 10 ".ktv[0:9]"  0 0.8 5 -0.10974761955058066 10 -0.55 15 -0.9
+		 20 -1.1 22 -1.0250368654944435 25 -0.245 30 0.5 35 0.7 40 0.8;
 	setAttr -s 10 ".kit[5:9]"  1 18 18 18 18;
 	setAttr -s 10 ".kot[5:9]"  1 18 18 18 18;
 	setAttr -s 10 ".kix[5:9]"  0.34746454180903358 0.21353274142713077 
-		0.40344154373093266 1 1;
+		0.40344154373093266 0.81153434145149439 1;
 	setAttr -s 10 ".kiy[5:9]"  0.93769312260751825 0.976935907999401 0.91500542118175554 
-		0 0;
+		0.58430472584507587 0;
 	setAttr -s 10 ".kox[5:9]"  0.34746454180903358 0.21353274142713077 
-		0.40344154373093266 1 1;
+		0.40344154373093266 0.81153434145149439 1;
 	setAttr -s 10 ".koy[5:9]"  0.93769312260751825 0.976935907999401 0.91500542118175554 
-		0 0;
+		0.58430472584507598 0;
 createNode animCurveTU -n "R_Leg_IK_Ctrl_visibility";
 	rename -uid "AADA07B9-4F5C-1777-7D1A-96BD875CF03B";
 	setAttr ".tan" 5;
@@ -3096,8 +3542,8 @@ createNode animCurveTU -n "R_Leg_IK_Ctrl_Foot_Roll";
 	rename -uid "CDD6F0DB-4D05-0DF0-F579-80A2621AF04C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 10 ".ktv[0:9]"  0 0 5 -8 10 -16 15 -20 20 -20 22 -17.48
-		 25 0 30 0 35 15 40 0;
+	setAttr -s 10 ".ktv[0:9]"  0 -10 5 -12 10 -16 15 -20 20 -25 22 -17.48
+		 25 0 30 0 35 5 40 -10;
 	setAttr -s 10 ".kit[5:9]"  1 18 18 18 18;
 	setAttr -s 10 ".kot[5:9]"  1 18 18 18 18;
 	setAttr -s 10 ".kix[5:9]"  0.011022258080558952 1 1 1 1;
@@ -3189,8 +3635,8 @@ createNode animCurveTL -n "Hip_Ctrl_translateY";
 	rename -uid "BC8B53D8-41C9-FBFC-1BC3-1D9840F770FA";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 0 5 0.15 10 0.3 15 0.15 20 0 25 0.15 30 0.3
-		 35 0.15 40 0;
+	setAttr -s 9 ".ktv[0:8]"  0 0.05 5 0.15 10 0.25 15 0.15 20 0.05 25 0.15
+		 30 0.25 35 0.15 40 0.05;
 createNode animCurveTL -n "Hip_Ctrl_translateZ";
 	rename -uid "AFBE36C4-4940-E9FE-1E0B-718794152875";
 	setAttr ".tan" 18;
@@ -3911,7 +4357,8 @@ createNode animCurveTA -n "L_Hand_Finger_02_Knuckle_01_Ctrl_rotateZ";
 	rename -uid "B621154F-4093-9A3A-5A62-3EB08616A349";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  0 40 10 45 20 40 30 45 40 40;
+	setAttr -s 5 ".ktv[0:4]"  0 40 10 29.999999999999996 20 40 30 29.999999999999996
+		 40 40;
 createNode animCurveTA -n "L_Hand_Finger_03_Knuckle_01_Ctrl_rotateX";
 	rename -uid "D2B2E378-4057-0DE0-70FF-8E8FCC446070";
 	setAttr ".tan" 18;
@@ -3926,7 +4373,8 @@ createNode animCurveTA -n "L_Hand_Finger_03_Knuckle_01_Ctrl_rotateZ";
 	rename -uid "8FB08B05-45F6-23D7-A7FC-FEAD43C920CF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  0 40 10 45 20 40 30 45 40 40;
+	setAttr -s 5 ".ktv[0:4]"  0 40 10 29.999999999999996 20 40 30 29.999999999999996
+		 40 40;
 createNode animCurveTA -n "L_Hand_Finger_04_Knuckle_01_Ctrl_rotateX";
 	rename -uid "A8E18E86-47E2-14E6-F69A-8181C4598E33";
 	setAttr ".tan" 18;
@@ -3942,7 +4390,8 @@ createNode animCurveTA -n "L_Hand_Finger_04_Knuckle_01_Ctrl_rotateZ";
 	rename -uid "B61BE955-4C1D-BD0B-2DE9-A7B64256C3FB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  0 40 10 45 20 40 30 45 40 40;
+	setAttr -s 5 ".ktv[0:4]"  0 40 10 29.999999999999996 20 40 30 29.999999999999996
+		 40 40;
 createNode animCurveTA -n "R_Hand_Finger_02_Knuckle_01_Ctrl_rotateX";
 	rename -uid "E89FFDCA-48B9-8BC2-8E41-C2B65F0F7393";
 	setAttr ".tan" 18;
@@ -3957,7 +4406,8 @@ createNode animCurveTA -n "R_Hand_Finger_02_Knuckle_01_Ctrl_rotateZ";
 	rename -uid "75E106B3-4718-E42F-1F24-CA9F270B33BD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  0 40 10 45 20 40 30 45 40 40;
+	setAttr -s 5 ".ktv[0:4]"  0 40 10 29.999999999999996 20 40 30 29.999999999999996
+		 40 40;
 createNode animCurveTA -n "R_Hand_Finger_03_Knuckle_01_Ctrl_rotateX";
 	rename -uid "34286DDF-4093-6B65-6BDB-D1A3C4A1E9BB";
 	setAttr ".tan" 18;
@@ -3972,7 +4422,8 @@ createNode animCurveTA -n "R_Hand_Finger_03_Knuckle_01_Ctrl_rotateZ";
 	rename -uid "BDA742B6-4163-B560-D43B-37A7806B9B56";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  0 40 10 45 20 40 30 45 40 40;
+	setAttr -s 5 ".ktv[0:4]"  0 40 10 29.999999999999996 20 40 30 29.999999999999996
+		 40 40;
 createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_01_Ctrl_rotateX";
 	rename -uid "D16C1C20-4C93-32C7-073A-1F9DCC2FD07E";
 	setAttr ".tan" 18;
@@ -3988,7 +4439,8 @@ createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_01_Ctrl_rotateZ";
 	rename -uid "EFAC8684-4C30-77DA-4CF2-279245651092";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  0 40 10 45 20 40 30 45 40 40;
+	setAttr -s 5 ".ktv[0:4]"  0 40 10 29.999999999999996 20 40 30 29.999999999999996
+		 40 40;
 createNode animCurveTU -n "L_Hand_Finger_02_Knuckle_01_Ctrl_visibility";
 	rename -uid "7D8AAC2D-4B27-0418-8806-9BA8366DB0EC";
 	setAttr ".tan" 9;
@@ -4330,7 +4782,7 @@ createNode animCurveTA -n "R_Hand_Finger_01_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "00B30FAE-4CC6-1099-4CDE-C0ACD9955072";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -45 20 -35 38 -45;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTU -n "L_Hand_Finger_01_Knuckle_01_Ctrl_visibility";
 	rename -uid "7CA5DC99-4923-1B4E-6273-44B6AE35F5C4";
 	setAttr ".tan" 9;
@@ -4529,7 +4981,7 @@ createNode animCurveTA -n "L_Hand_Finger_02_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "EAB0E34E-4EAC-1A93-5837-8685E2832072";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "L_Hand_Finger_02_Knuckle_03_Ctrl_rotateX";
 	rename -uid "1B18FECA-4506-7AE5-6A52-C19A7442F946";
 	setAttr ".tan" 18;
@@ -4544,7 +4996,7 @@ createNode animCurveTA -n "L_Hand_Finger_02_Knuckle_03_Ctrl_rotateZ";
 	rename -uid "EA91C7EC-46ED-59C9-FF59-4DB993700F51";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "L_Hand_Finger_03_Knuckle_02_Ctrl_rotateX";
 	rename -uid "AC479635-46DD-7E0A-D227-ADBF4A369CC3";
 	setAttr ".tan" 18;
@@ -4559,7 +5011,7 @@ createNode animCurveTA -n "L_Hand_Finger_03_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "155BC025-49B4-5B57-7132-8BB1F22A7C02";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "L_Hand_Finger_03_Knuckle_03_Ctrl_rotateX";
 	rename -uid "98BB02DB-47A3-808C-B763-41AA0B86693E";
 	setAttr ".tan" 18;
@@ -4574,7 +5026,7 @@ createNode animCurveTA -n "L_Hand_Finger_03_Knuckle_03_Ctrl_rotateZ";
 	rename -uid "825F9A56-4662-100D-E0FA-C28E650101EC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "L_Hand_Finger_04_Knuckle_02_Ctrl_rotateX";
 	rename -uid "E02A31AF-4EF1-5F1A-3C8E-92A101BC23D8";
 	setAttr ".tan" 18;
@@ -4589,7 +5041,7 @@ createNode animCurveTA -n "L_Hand_Finger_04_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "25EAF50D-4E38-AC1C-C6AC-D6B8B70D75B5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "L_Hand_Finger_04_Knuckle_03_Ctrl_rotateX";
 	rename -uid "AC8A2B03-4589-9477-3A90-2EB4CC4C57D5";
 	setAttr ".tan" 18;
@@ -4604,7 +5056,7 @@ createNode animCurveTA -n "L_Hand_Finger_04_Knuckle_03_Ctrl_rotateZ";
 	rename -uid "1D1737DE-41F0-FE72-EB59-20A59DD12EB7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "R_Hand_Finger_02_Knuckle_02_Ctrl_rotateX";
 	rename -uid "9428D331-4C1C-A1D3-E1C6-EB82A7965EFE";
 	setAttr ".tan" 18;
@@ -4619,7 +5071,7 @@ createNode animCurveTA -n "R_Hand_Finger_02_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "4E5C06E0-466C-C3A9-85D6-669C480173A9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "R_Hand_Finger_02_Knuckle_03_Ctrl_rotateX";
 	rename -uid "B88851D1-4C9B-D423-8F29-7F926D0272D5";
 	setAttr ".tan" 18;
@@ -4634,7 +5086,7 @@ createNode animCurveTA -n "R_Hand_Finger_02_Knuckle_03_Ctrl_rotateZ";
 	rename -uid "00C11F44-46D5-B14D-F6A0-4A8A74B7A1C4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "R_Hand_Finger_03_Knuckle_02_Ctrl_rotateX";
 	rename -uid "302BCDA2-4269-6187-3C15-68928DFC4488";
 	setAttr ".tan" 18;
@@ -4649,7 +5101,7 @@ createNode animCurveTA -n "R_Hand_Finger_03_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "B477857B-4442-00F6-9CC8-69942C2BE557";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "R_Hand_Finger_03_Knuckle_03_Ctrl_rotateX";
 	rename -uid "6114D314-44A2-CA8B-5D8D-64904FC4F9EE";
 	setAttr ".tan" 18;
@@ -4664,7 +5116,7 @@ createNode animCurveTA -n "R_Hand_Finger_03_Knuckle_03_Ctrl_rotateZ";
 	rename -uid "9C809536-452A-2E22-F65C-F392CB0CD167";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_02_Ctrl_rotateX";
 	rename -uid "35C644DB-453D-1C11-557A-B794481C5CE0";
 	setAttr ".tan" 18;
@@ -4679,7 +5131,7 @@ createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_02_Ctrl_rotateZ";
 	rename -uid "C2C80811-43BF-0C13-8F2B-41B1F552A9CE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_03_Ctrl_rotateX";
 	rename -uid "CA73E60F-4FE5-A00A-35B4-AEBE851A890C";
 	setAttr ".tan" 18;
@@ -4694,7 +5146,7 @@ createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_03_Ctrl_rotateZ";
 	rename -uid "1DC9381E-4941-93BE-BFA2-599B49BCE29E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  2 -40 20 -35 38 -40;
+	setAttr -s 3 ".ktv[0:2]"  2 -29.999999999999996 20 -25 38 -29.999999999999996;
 createNode animCurveTU -n "L_Hand_Finger_02_Knuckle_02_Ctrl_visibility";
 	rename -uid "C891ED09-4CE5-BCE8-0A21-219FA0A1AC0E";
 	setAttr ".tan" 9;
@@ -5627,7 +6079,7 @@ createNode animCurveTU -n "Transform_Ctrl_TailIKFK";
 	rename -uid "652982B9-4D51-D33F-B402-AD99F73E1DD0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr ".ktv[0]"  0 1;
 createNode pairBlend -n "pairBlend1";
 	rename -uid "1E709533-4068-9982-B54C-13890463E11F";
 	setAttr ".tym" 2;
@@ -5704,1161 +6156,618 @@ createNode animCurveTA -n "Tail_01_Ctrl_rotateX";
 	rename -uid "DC07A921-4FB4-F95A-3891-5C9EBF45FB90";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTA -n "Tail_01_Ctrl_rotateY";
 	rename -uid "B36C05FB-46C1-41D0-18FA-EABB92D9E6E7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -1 10 0 21 1 30 0 40 -1;
 createNode animCurveTA -n "Tail_01_Ctrl_rotateZ";
 	rename -uid "F9785E81-4A02-5375-8986-A19F6B8114E8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -7 10 -6.0000000000000009 21 -7 30 -6.0000000000000009
+		 40 -7;
 createNode animCurveTA -n "Tail_02_Ctrl_rotateX";
 	rename -uid "0E595FF3-4C3B-72DC-51D5-8D930ED36A5D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTA -n "Tail_02_Ctrl_rotateY";
 	rename -uid "5D5ABF45-4FD1-64FC-2383-0197CA4B7BFD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -1 10 0 21 1 30 0 40 -1;
 createNode animCurveTA -n "Tail_02_Ctrl_rotateZ";
 	rename -uid "0769FF06-4650-FDAC-88E4-1BA1F601F14C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -7 10 -6.0000000000000009 21 -7 30 -6.0000000000000009
+		 40 -7;
 createNode animCurveTA -n "Tail_03_Ctrl_rotateX";
 	rename -uid "2D9C9031-47D9-E25D-BE17-16AA5AADBE7F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTA -n "Tail_03_Ctrl_rotateY";
 	rename -uid "A68548B2-415D-1685-D1A7-3985C29B2F0D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -1 10 0 21 1 30 0 40 -1;
 createNode animCurveTA -n "Tail_03_Ctrl_rotateZ";
 	rename -uid "CFB6E916-4209-E580-CCF4-319F66B4B49E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -7 10 -6.0000000000000009 21 -7 30 -6.0000000000000009
+		 40 -7;
 createNode animCurveTA -n "Tail_04_Ctrl_rotateX";
 	rename -uid "807E4F77-4004-2255-CD54-99B7A3CDEB85";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTA -n "Tail_04_Ctrl_rotateY";
 	rename -uid "B8EB613A-4ACA-B17D-4CAD-E3BE5A8ADB2C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -1 10 0 21 1 30 0 40 -1;
 createNode animCurveTA -n "Tail_04_Ctrl_rotateZ";
 	rename -uid "D46CFE02-45EE-AE06-E027-B28B4E477926";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -7 10 -6.0000000000000009 21 -7 30 -6.0000000000000009
+		 40 -7;
 createNode animCurveTA -n "Tail_05_Ctrl_rotateX";
 	rename -uid "D1AF882E-4C28-A6C3-BF81-5EA0E3ECC9E8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTA -n "Tail_05_Ctrl_rotateY";
 	rename -uid "38E2F698-4372-ADF5-7D18-F9ABE8D91519";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -1 10 0 21 1 30 0 40 -1;
 createNode animCurveTA -n "Tail_05_Ctrl_rotateZ";
 	rename -uid "448CB01E-4902-483D-8F81-8A84FDA100C1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -7 10 -6.0000000000000009 21 -7 30 -6.0000000000000009
+		 40 -7;
 createNode animCurveTA -n "Tail_06_Ctrl_rotateX";
 	rename -uid "8ABE29A2-43F6-693F-BF82-6D963A15110D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTA -n "Tail_06_Ctrl_rotateY";
 	rename -uid "61916FA5-4A5E-A707-08C5-B18F05E170B6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -1 10 0 21 1 30 0 40 -1;
 createNode animCurveTA -n "Tail_06_Ctrl_rotateZ";
 	rename -uid "4A5BB832-475B-FA34-AF86-A5A9EAD7BF20";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -7 10 -6.0000000000000009 21 -7 30 -6.0000000000000009
+		 40 -7;
 createNode animCurveTA -n "Tail_07_Ctrl_rotateX";
 	rename -uid "444498ED-4B2D-CB0B-4653-B59E7B549652";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTA -n "Tail_07_Ctrl_rotateY";
 	rename -uid "38DFE42A-4E03-DB86-2514-7E90C9CA2E67";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 -1 21 1 40 -1;
 createNode animCurveTA -n "Tail_07_Ctrl_rotateZ";
 	rename -uid "F2930F97-49CE-DE43-7596-319B70BEDBBB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTA -n "Tail_08_Ctrl_rotateX";
 	rename -uid "8BAEFDAB-4283-FC7B-D9B8-38B65C10621A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTA -n "Tail_08_Ctrl_rotateY";
 	rename -uid "17F0FCB6-41BB-1BB4-6627-ABAC09623DDF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 -1 21 1 40 -1;
 createNode animCurveTA -n "Tail_08_Ctrl_rotateZ";
 	rename -uid "71243193-4951-F51D-FF40-19A337A8FA8C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 5 21 5 40 5;
 createNode animCurveTA -n "Tail_09_Ctrl_rotateX";
 	rename -uid "75795158-4859-99C7-D4A6-A6BE4D1E69D9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTA -n "Tail_09_Ctrl_rotateY";
 	rename -uid "63326DF9-482C-8629-976D-88A34B0BE780";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 -1 21 1 40 -1;
 createNode animCurveTA -n "Tail_09_Ctrl_rotateZ";
 	rename -uid "99BD3EA2-4413-4609-FA68-FEB88F408AC3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 10 21 10 40 10;
 createNode animCurveTA -n "Tail_10_Ctrl_rotateX";
 	rename -uid "E223A632-47FF-44C4-CBAE-A39401878EBA";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTA -n "Tail_10_Ctrl_rotateY";
 	rename -uid "5BFEDD83-4BD9-00C0-BEE5-B5B7859DDF76";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 -1 21 1 40 -1;
 createNode animCurveTA -n "Tail_10_Ctrl_rotateZ";
 	rename -uid "539E3E60-48B5-C282-3AB1-B5A3FE8BB435";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_11_Ctrl_rotateX";
-	rename -uid "A031D7C8-4C65-1169-8C5E-F18D30D6B007";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_11_Ctrl_rotateY";
-	rename -uid "44137580-4E09-1FD6-CB8D-D3A7ACD518B4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_11_Ctrl_rotateZ";
-	rename -uid "F36A2F4E-4716-FCFF-4A2E-3B99B617E64D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_12_Ctrl_rotateX";
-	rename -uid "EB4D6A7D-4C71-4823-3CE6-E8B8E812C761";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_12_Ctrl_rotateY";
-	rename -uid "C1117067-4939-E814-FC1F-238D0B667817";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_12_Ctrl_rotateZ";
-	rename -uid "D14E22CD-4419-180A-FD9C-7FA5FE5FDAC5";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_13_Ctrl_rotateX";
-	rename -uid "7E87563B-42AE-D110-2B08-FF97BCA18054";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_13_Ctrl_rotateY";
-	rename -uid "76E2F503-44F5-4899-1695-C480B6BF2BE0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_13_Ctrl_rotateZ";
-	rename -uid "006867AD-4FEB-C720-74A2-81AFC2FAAA77";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_14_Ctrl_rotateX";
-	rename -uid "967FC755-46E4-B663-7E71-068CD5B8BA12";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_14_Ctrl_rotateY";
-	rename -uid "0CDCDF27-449D-C252-6C51-EAA614E3D3F9";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_14_Ctrl_rotateZ";
-	rename -uid "2AEF34C2-4C2E-429A-8792-1A9E4AC178E1";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_15_Ctrl_rotateX";
-	rename -uid "33F43F9C-4F81-B12B-986A-7F83937D9684";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_15_Ctrl_rotateY";
-	rename -uid "E32D6A1E-4833-15AA-D75B-079AE8EF1997";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_15_Ctrl_rotateZ";
-	rename -uid "DDA41DAE-465A-39BC-3F6A-F19A8ED61658";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_16_Ctrl_rotateX";
-	rename -uid "6239B8CF-46FA-7330-644D-109FDED25E58";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_16_Ctrl_rotateY";
-	rename -uid "D2322E8B-429E-F6E0-80D0-11BE2A5D81CF";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_16_Ctrl_rotateZ";
-	rename -uid "BF61BB68-46E1-0326-FF3C-D6A6B205B8F5";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_17_Ctrl_rotateX";
-	rename -uid "5475882C-482C-C6CE-6CA7-1CA77B82956F";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_17_Ctrl_rotateY";
-	rename -uid "86FC393B-4442-B894-52F8-439F17B35D9F";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_17_Ctrl_rotateZ";
-	rename -uid "D123EF8A-43C6-A10C-559A-9E8018BF4252";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_18_Ctrl_rotateX";
-	rename -uid "F543002A-4CE6-3A62-93BA-458DE562D964";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_18_Ctrl_rotateY";
-	rename -uid "4BB63B79-4D05-B3BD-1E25-8C96574E41B1";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_18_Ctrl_rotateZ";
-	rename -uid "2E9EABD6-45A4-FA4D-7322-1DB54292BB52";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_19_Ctrl_rotateX";
-	rename -uid "7C2627EE-4140-3126-1B16-F880DE5801FB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_19_Ctrl_rotateY";
-	rename -uid "524F9F2B-453C-E31F-FB64-E0A6069D3315";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "Tail_19_Ctrl_rotateZ";
-	rename -uid "238EE25C-4F30-B3B5-2ECF-7E972B782E04";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 10 21 10 40 10;
 createNode animCurveTU -n "Tail_01_Ctrl_visibility";
 	rename -uid "2B7C76FD-4485-E319-2646-99B7402F063C";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTL -n "Tail_01_Ctrl_translateX";
 	rename -uid "23B71BAB-46AE-B440-FE82-9DBC851EEAAE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_01_Ctrl_translateY";
 	rename -uid "F2FB7A95-4211-4CE0-7483-03908AD5C663";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_01_Ctrl_translateZ";
 	rename -uid "D7808B53-4116-8921-F256-F0B659791D5C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTU -n "Tail_01_Ctrl_scaleX";
 	rename -uid "00B25965-482B-E476-2185-3EA558819F66";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_01_Ctrl_scaleY";
 	rename -uid "8C9B01E1-4184-14A6-F27F-FA897F9EACB0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_01_Ctrl_scaleZ";
 	rename -uid "2A2A3FE4-4A26-C7C0-BA72-9E86CAD0A003";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_01_Ctrl_FollowTranslate";
 	rename -uid "7DA4003C-444B-12E1-980F-1D81BA17C5BA";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_01_Ctrl_FollowRotate";
 	rename -uid "F297930D-48B4-24F5-ED7B-3798C6841489";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_10_Ctrl_visibility";
 	rename -uid "9BB47C5E-4C7E-3B16-FA01-B7854054E2BA";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
 createNode animCurveTL -n "Tail_10_Ctrl_translateX";
 	rename -uid "BFA4EAC9-49F4-8CB7-200D-34B2AE167861";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_10_Ctrl_translateY";
 	rename -uid "4AD3A7ED-42DF-2249-23B4-E9A4962F7B59";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_10_Ctrl_translateZ";
 	rename -uid "B6E5ACAB-44E7-8614-8722-02B505457E61";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTU -n "Tail_10_Ctrl_scaleX";
 	rename -uid "59C071E3-44CD-586E-1B6C-8FB47E982DDD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_10_Ctrl_scaleY";
 	rename -uid "62E619C0-4CF2-9D4D-D1FA-329C30F8C3CB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_10_Ctrl_scaleZ";
 	rename -uid "1C1CE26A-4778-EFEB-D1FE-6EBA4B233B33";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_10_Ctrl_FollowTranslate";
 	rename -uid "A08B9E39-4F21-2134-9C64-A3B91301275B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_10_Ctrl_FollowRotate";
 	rename -uid "EBF0D395-48FA-0046-E126-3B851FA5C1A4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_14_Ctrl_visibility";
-	rename -uid "36F188B0-4302-A32F-837C-3686F9A208E1";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_14_Ctrl_translateX";
-	rename -uid "47F23AEC-406E-19CF-3813-B489DB96BC35";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_14_Ctrl_translateY";
-	rename -uid "848D9F34-4FEE-7800-6718-48BA5FB066BB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_14_Ctrl_translateZ";
-	rename -uid "59B30E17-467D-AC29-F06F-6EB4CA1AC2FB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_14_Ctrl_scaleX";
-	rename -uid "C4ABED7C-42C8-2DF9-34BA-D5A0687B5644";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_14_Ctrl_scaleY";
-	rename -uid "4E95C437-46C7-27AF-2A9F-1B822C83CC08";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_14_Ctrl_scaleZ";
-	rename -uid "DFE56A24-4D34-C093-E4AF-559494069BB7";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_14_Ctrl_FollowTranslate";
-	rename -uid "98EF6C2D-4366-3019-EC01-F98075216DB1";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_14_Ctrl_FollowRotate";
-	rename -uid "194BFA0F-4140-E7C5-6690-1FBCC95C5F05";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_09_Ctrl_visibility";
 	rename -uid "7F39AE10-41ED-FA7E-60A7-81975B1AFB59";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
 createNode animCurveTL -n "Tail_09_Ctrl_translateX";
 	rename -uid "8B4AD1D7-4D3A-5DD2-7847-18B6ABAE65A0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_09_Ctrl_translateY";
 	rename -uid "F610A56D-47F5-5DC2-5DA0-E5A7CEF97128";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_09_Ctrl_translateZ";
 	rename -uid "8570B91B-4FCF-029B-CF5A-018EA9788079";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTU -n "Tail_09_Ctrl_scaleX";
 	rename -uid "433854BB-4F56-BBA2-8365-B2A2E99ADB32";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_09_Ctrl_scaleY";
 	rename -uid "FA53AD0D-4CB4-3514-F807-3DA6BCA7D001";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_09_Ctrl_scaleZ";
 	rename -uid "E6874E67-4D5F-5CFE-FF67-1B87A41F9C5F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_09_Ctrl_FollowTranslate";
 	rename -uid "07C9A157-4D9B-4115-27E1-2D8AE9A0CFAD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_09_Ctrl_FollowRotate";
 	rename -uid "80E464EB-4ECF-6C5E-6F10-9689EFA1E385";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_03_Ctrl_visibility";
 	rename -uid "0A7D71C4-4117-8E09-D56D-E39C49E586C1";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTL -n "Tail_03_Ctrl_translateX";
 	rename -uid "6163EDC3-4EA6-5ABF-6729-04AFC694DFE6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_03_Ctrl_translateY";
 	rename -uid "987FC4C8-4B32-978C-1611-7C8E21425D89";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_03_Ctrl_translateZ";
 	rename -uid "58683867-41BB-1E7D-D6EE-B69F3B2612F1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTU -n "Tail_03_Ctrl_scaleX";
 	rename -uid "6166F83C-429B-D3AD-EB23-1BB3F444DF13";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_03_Ctrl_scaleY";
 	rename -uid "A0170E9A-4ACC-9EEF-DA57-71AFC18623FB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_03_Ctrl_scaleZ";
 	rename -uid "C8832157-40D7-452B-1667-C49F8676BBDE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_03_Ctrl_FollowTranslate";
 	rename -uid "C496E7E7-41A7-4C6C-9364-27885B2FC28A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_03_Ctrl_FollowRotate";
 	rename -uid "399FB29D-4CA4-C109-64A3-A993B8B178DE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_04_Ctrl_visibility";
 	rename -uid "78120D18-4E20-38FE-780C-E69E15785A88";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTL -n "Tail_04_Ctrl_translateX";
 	rename -uid "324406DC-4B0B-762B-2FF6-D8A5B6A98DCB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_04_Ctrl_translateY";
 	rename -uid "1B8263A0-46E9-CF5D-A8F7-448A82563250";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_04_Ctrl_translateZ";
 	rename -uid "2A7EFC4A-4D29-C2C7-F006-109850CBC971";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTU -n "Tail_04_Ctrl_scaleX";
 	rename -uid "0F5AD19F-487D-4414-8E24-E49641DEDDC7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_04_Ctrl_scaleY";
 	rename -uid "ECE0B344-40B5-5807-4BA0-FDBB796EF4EC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_04_Ctrl_scaleZ";
 	rename -uid "19BA286C-4854-9360-BCB6-1295A5DD775F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_04_Ctrl_FollowTranslate";
 	rename -uid "1C8EBF66-4999-84D2-10DC-FFAC4F39A247";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_04_Ctrl_FollowRotate";
 	rename -uid "C288B16D-43DF-087A-C6E3-13867C91FCC8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_16_Ctrl_visibility";
-	rename -uid "1A7598D8-421A-E31F-D908-EBBB84E3B064";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_16_Ctrl_translateX";
-	rename -uid "51DC0346-48D6-BD38-8184-1E9A9B6AD0D4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_16_Ctrl_translateY";
-	rename -uid "B0F58136-4FAE-F74A-63CC-DA830976F5EE";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_16_Ctrl_translateZ";
-	rename -uid "F1C195DD-4EC1-B79B-275B-AA9800557F45";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_16_Ctrl_scaleX";
-	rename -uid "D9E44992-4570-6C03-1C3C-308A140F4C5E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_16_Ctrl_scaleY";
-	rename -uid "1A0CE0D0-487E-9F7A-57CF-27AD9D7E2482";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_16_Ctrl_scaleZ";
-	rename -uid "2FB50CCF-43E7-B95F-720D-35A38E27F19A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_16_Ctrl_FollowTranslate";
-	rename -uid "2AE10E0B-42E8-B669-B869-B6A57426E2D2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_16_Ctrl_FollowRotate";
-	rename -uid "646B16EE-4E64-7504-855E-67B4EFCF8CEF";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_15_Ctrl_visibility";
-	rename -uid "97E14408-4814-E785-7796-41A35D05A401";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_15_Ctrl_translateX";
-	rename -uid "B6A3FF5C-4F25-D3C1-C5A4-6494D742CB8B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_15_Ctrl_translateY";
-	rename -uid "31F75104-4CF5-D04E-8309-458E8B76F83B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_15_Ctrl_translateZ";
-	rename -uid "D222495F-48B3-4AA5-FB4D-FBBD6A7D0C1A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_15_Ctrl_scaleX";
-	rename -uid "0C3DEDD2-4E03-20D1-F551-7983C50BBBC0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_15_Ctrl_scaleY";
-	rename -uid "47A9DBB7-4E52-3FDE-970C-8DA2D4978B03";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_15_Ctrl_scaleZ";
-	rename -uid "DBB9908F-4D67-BD51-8207-738B7235B016";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_15_Ctrl_FollowTranslate";
-	rename -uid "AAD1B709-457C-9D8C-FAB4-5A9FE506D609";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_15_Ctrl_FollowRotate";
-	rename -uid "51B3E6E5-4218-9FAA-C175-6494732A92E8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_05_Ctrl_visibility";
 	rename -uid "B60D8DAE-491A-21A4-F655-629E3C5813FB";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTL -n "Tail_05_Ctrl_translateX";
 	rename -uid "A99D0700-48B1-808A-45CF-23A1C71ED500";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_05_Ctrl_translateY";
 	rename -uid "2C3171FE-42A8-2299-78B2-ECB72148FF77";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_05_Ctrl_translateZ";
 	rename -uid "AC2A25AC-4F4B-5ECD-D91A-ACAF5000BCE2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTU -n "Tail_05_Ctrl_scaleX";
 	rename -uid "A72D9973-4AD0-337A-10A6-2FB492C55C76";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_05_Ctrl_scaleY";
 	rename -uid "18F18701-4E82-E87B-B1E4-F483B3740D25";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_05_Ctrl_scaleZ";
 	rename -uid "C62DA72E-4E40-15B3-B848-C288774485E5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_05_Ctrl_FollowTranslate";
 	rename -uid "BEDED599-4E81-18C3-F27D-A294BE2B5D73";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_05_Ctrl_FollowRotate";
 	rename -uid "F3E82698-4E5E-B160-CA59-20AD48E5899C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_13_Ctrl_visibility";
-	rename -uid "062A2DB4-4301-870E-9C13-AB842850EC7C";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_13_Ctrl_translateX";
-	rename -uid "1EFF3B50-489C-020B-5D91-01B025988F29";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_13_Ctrl_translateY";
-	rename -uid "E515A388-404B-9DAE-3A88-5E9588AB5A72";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_13_Ctrl_translateZ";
-	rename -uid "8EE87F81-42D8-190A-CE78-0B998928262F";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_13_Ctrl_scaleX";
-	rename -uid "DCE468A4-443F-62E1-257A-C68963D1AC1B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_13_Ctrl_scaleY";
-	rename -uid "FC858EF4-45E6-A2C3-0D27-3DBD798C846B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_13_Ctrl_scaleZ";
-	rename -uid "FAB99891-418D-DEB4-9F6D-8ABC76347E86";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_13_Ctrl_FollowTranslate";
-	rename -uid "7D0DA3A3-4B5F-361F-C037-C3A2730DB151";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_13_Ctrl_FollowRotate";
-	rename -uid "900A1467-4794-B5CA-8FB8-D6AF9A807FB2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_02_Ctrl_visibility";
 	rename -uid "D4A37F02-4E07-04C8-5767-FE85E0D732F6";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTL -n "Tail_02_Ctrl_translateX";
 	rename -uid "C4A2C36B-42ED-E586-23DB-EEB53C5E8447";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_02_Ctrl_translateY";
 	rename -uid "7440F2E3-40E0-7D40-89B8-6E9ADD49A43E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_02_Ctrl_translateZ";
 	rename -uid "AC10AF8D-4847-28C7-2EE8-848299F9E78F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTU -n "Tail_02_Ctrl_scaleX";
 	rename -uid "AF4D03AB-474F-C632-EBD0-5199E109CAF9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_02_Ctrl_scaleY";
 	rename -uid "A312CFC5-4C6A-C1CE-6698-29AFD4C53541";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_02_Ctrl_scaleZ";
 	rename -uid "D753567C-4E38-FBA8-23E1-3D9655E4E839";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_02_Ctrl_FollowTranslate";
 	rename -uid "B5F65C3A-435C-0D4D-6FEC-F3894313A8A2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_02_Ctrl_FollowRotate";
 	rename -uid "B2C7D367-4FB9-A242-C742-B983377C796A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_07_Ctrl_visibility";
 	rename -uid "0078F39E-4633-568D-3A93-A9AF6C670293";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
 createNode animCurveTL -n "Tail_07_Ctrl_translateX";
 	rename -uid "9C632484-4164-70DD-5C85-0F896D9C4E75";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_07_Ctrl_translateY";
 	rename -uid "E183468C-47A0-BDE2-5C62-C8808E69F6DB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_07_Ctrl_translateZ";
 	rename -uid "40764BFD-413E-A6B7-6B7F-CD83AD044D9B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTU -n "Tail_07_Ctrl_scaleX";
 	rename -uid "C801A530-4E98-61F2-37B8-0AA2395ED2AF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_07_Ctrl_scaleY";
 	rename -uid "B815D300-4E7E-15C1-5E40-4E9907BF3378";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_07_Ctrl_scaleZ";
 	rename -uid "2E4A9609-4D21-F7C4-EBAE-DAA0811EF1CE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_07_Ctrl_FollowTranslate";
 	rename -uid "E1B3B7E5-4E94-6043-117E-13AC2A022C0A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_07_Ctrl_FollowRotate";
 	rename -uid "A56F5D71-4D1E-EACA-43DA-A08B0D1F0A68";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_12_Ctrl_visibility";
-	rename -uid "3651D589-49FC-E534-DBB3-3AA0A7A4410B";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_12_Ctrl_translateX";
-	rename -uid "4647D2F7-4DE0-106E-4624-9F8FF305474E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_12_Ctrl_translateY";
-	rename -uid "C1413600-4B24-7518-695A-2D9C8B105DF2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_12_Ctrl_translateZ";
-	rename -uid "5F4AC887-40B8-96E9-58E6-C5AE66E7EC66";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_12_Ctrl_scaleX";
-	rename -uid "705BF6A3-4592-36BD-CFD4-16AB4A54DC78";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_12_Ctrl_scaleY";
-	rename -uid "C11F8B98-4C97-17AF-DAA3-8F93FDB9BF6D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_12_Ctrl_scaleZ";
-	rename -uid "C0833FBB-45D2-5490-B4D8-A5BE37057A47";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_12_Ctrl_FollowTranslate";
-	rename -uid "1043EF1A-42BE-AC18-0E34-70A76F4729A8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_12_Ctrl_FollowRotate";
-	rename -uid "28AAFD5E-4ED9-AFC1-D978-6B94164612FD";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_18_Ctrl_visibility";
-	rename -uid "8AB92C80-4694-9907-E6BB-CC9C83034B65";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_18_Ctrl_translateX";
-	rename -uid "45D9EB31-45D1-D175-0846-EE8A2F2F64E0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_18_Ctrl_translateY";
-	rename -uid "B17421C3-4334-64F9-B6B1-EF9525E29558";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_18_Ctrl_translateZ";
-	rename -uid "F09780D4-42FD-E077-772B-CFB8045C7999";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_18_Ctrl_scaleX";
-	rename -uid "A1738C4C-4A6C-C180-CB75-86873D4321B1";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_18_Ctrl_scaleY";
-	rename -uid "6FAB2DBF-4E54-2945-0FF9-7AAB46560A03";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_18_Ctrl_scaleZ";
-	rename -uid "D3B74C21-41CD-768F-B068-00AF733B875D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_18_Ctrl_FollowTranslate";
-	rename -uid "40F5650B-4883-9E28-9C72-7E87CF32A957";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_18_Ctrl_FollowRotate";
-	rename -uid "DAD05F24-45C8-3369-7102-539377D49748";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_06_Ctrl_visibility";
 	rename -uid "D290FDB2-4E80-640E-EF8B-329FF4DD31B0";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTL -n "Tail_06_Ctrl_translateX";
 	rename -uid "05943596-44B8-9AEB-F051-D0A65B85CFF1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_06_Ctrl_translateY";
 	rename -uid "C01ECAE1-4DB5-1737-08EC-4DA9430B510A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTL -n "Tail_06_Ctrl_translateZ";
 	rename -uid "566C6E1E-4151-6848-B442-78816D3A0CBE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 21 0 30 0 40 0;
 createNode animCurveTU -n "Tail_06_Ctrl_scaleX";
 	rename -uid "8EA47A24-427D-2F14-AB85-5580C1893C09";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_06_Ctrl_scaleY";
 	rename -uid "7B9DFBD6-49CF-A624-60AA-32949B14E86B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_06_Ctrl_scaleZ";
 	rename -uid "914B5644-4FAB-9ADD-98E6-F98DE7CB9E26";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_06_Ctrl_FollowTranslate";
 	rename -uid "2FE869A4-47B7-E994-85F6-EF8543FB17F4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_06_Ctrl_FollowRotate";
 	rename -uid "7D0D5ED9-4CC1-C7B3-5865-19BA74202C5E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_17_Ctrl_visibility";
-	rename -uid "6425AA09-44C2-6315-5F0F-0882F63BAB6B";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_17_Ctrl_translateX";
-	rename -uid "E69E1473-4C2A-3F25-75BA-1F94BC439D80";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_17_Ctrl_translateY";
-	rename -uid "9DD0BA73-4C0E-E463-8848-16B36BDCD8B3";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_17_Ctrl_translateZ";
-	rename -uid "972E1EFD-471C-68D3-8AB5-50BE7A18D7B5";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_17_Ctrl_scaleX";
-	rename -uid "A3EBF085-45FB-0521-1F33-A6B7B78D244B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_17_Ctrl_scaleY";
-	rename -uid "C758DF8D-4AF1-70BE-E55D-DDB5E7CCFD76";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_17_Ctrl_scaleZ";
-	rename -uid "D2412959-41B9-E88A-071C-53B7FB299351";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_17_Ctrl_FollowTranslate";
-	rename -uid "AA4F0CC9-4B06-DCDC-E5B6-2D9E6FFDDB59";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_17_Ctrl_FollowRotate";
-	rename -uid "E240A47F-420B-16AA-37BD-02B532781207";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_11_Ctrl_visibility";
-	rename -uid "AA3914BC-46C5-5136-AA15-789A493EFF21";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_11_Ctrl_translateX";
-	rename -uid "E2BCC42B-49D7-1249-5433-DFBFD6C32507";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_11_Ctrl_translateY";
-	rename -uid "EF4F5F11-4505-3615-42C4-EDB8010FBC33";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_11_Ctrl_translateZ";
-	rename -uid "30E6B3F0-4D90-23C0-54E6-66912B2AA716";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_11_Ctrl_scaleX";
-	rename -uid "9345D122-48FF-4D5A-E836-9ABF23707717";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_11_Ctrl_scaleY";
-	rename -uid "13D5FE47-45F4-D144-CC38-378B68519B13";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_11_Ctrl_scaleZ";
-	rename -uid "AFACD681-4128-0B42-F9B7-649DA59989A5";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_11_Ctrl_FollowTranslate";
-	rename -uid "14D30249-4386-44E1-CAD1-94982C3592B8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_11_Ctrl_FollowRotate";
-	rename -uid "B10AAC2E-4D3F-375B-337D-BDA551587F58";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 21 1 30 1 40 1;
 createNode animCurveTU -n "Tail_08_Ctrl_visibility";
 	rename -uid "5A7DCDAD-4DB5-EAAE-B3B8-06A2ED7B1636";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
 createNode animCurveTL -n "Tail_08_Ctrl_translateX";
 	rename -uid "93FD4C9A-4B89-318C-D880-EB9EA35C316A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_08_Ctrl_translateY";
 	rename -uid "214E5ABB-4546-4972-68F5-679C7DF3FC45";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTL -n "Tail_08_Ctrl_translateZ";
 	rename -uid "5D1E47CD-41E5-7D10-DA88-B2BFF8762570";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
 createNode animCurveTU -n "Tail_08_Ctrl_scaleX";
 	rename -uid "3B9EF804-406C-098F-0B32-B99F42B56421";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_08_Ctrl_scaleY";
 	rename -uid "E1472FA7-4F69-CE8F-DBCE-62BF266A6A24";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_08_Ctrl_scaleZ";
 	rename -uid "0F650B36-4D2B-346C-02C7-978F355BB2E1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_08_Ctrl_FollowTranslate";
 	rename -uid "0098872B-4371-7E3E-1C10-FBA36AA7BA66";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "Tail_08_Ctrl_FollowRotate";
 	rename -uid "B05C3E40-4B55-FE8D-0E42-A6B90FF6CC5D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_19_Ctrl_visibility";
-	rename -uid "27D6B11A-493F-3044-9CB4-D4A59B47E3AA";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Tail_19_Ctrl_translateX";
-	rename -uid "8F884682-409B-FD7C-904E-AB85D7886E77";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_19_Ctrl_translateY";
-	rename -uid "6A09550A-4CF6-5F2F-5640-75A1803F418B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "Tail_19_Ctrl_translateZ";
-	rename -uid "658CECDF-493E-14E5-064D-4C962D3A4B50";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "Tail_19_Ctrl_scaleX";
-	rename -uid "F3859120-4F21-7944-8EFC-99835236F029";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_19_Ctrl_scaleY";
-	rename -uid "3EACACB1-4A80-9F9B-DCE2-DAB29BA1CF6B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_19_Ctrl_scaleZ";
-	rename -uid "7C62DDF0-424B-EA66-BA39-6985C0E890B4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_19_Ctrl_FollowTranslate";
-	rename -uid "275228E0-4FB0-76E4-6153-5388C7D86404";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "Tail_19_Ctrl_FollowRotate";
-	rename -uid "294D79D2-4791-4A08-686B-B6A01C284698";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
 createNode animCurveTU -n "L_Upper_Limb_02_FK_Ctrl_visibility";
 	rename -uid "53A83E7B-4D6A-2F54-3569-CB9C10A2A41C";
 	setAttr ".tan" 9;
@@ -6985,59 +6894,122 @@ createNode animCurveTL -n "Tail_IK_03_Ctrl_translateX";
 	rename -uid "A056BB19-4945-24BF-E209-D9A81AD1A454";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.47168685595015791;
+	setAttr -s 5 ".ktv[0:4]"  1 0.1 10 0.1 21 0.1 30 0.1 40 0.1;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTL -n "Tail_IK_03_Ctrl_translateY";
 	rename -uid "439127C4-47AB-4528-7031-5DA5B6D22D75";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -1.061922249637218;
+	setAttr -s 5 ".ktv[0:4]"  1 -0.8999999999999998 10 -0.7 21 -0.9 30 -0.7
+		 40 -0.9;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTL -n "Tail_IK_03_Ctrl_translateZ";
 	rename -uid "629597C2-4DFC-0695-3B5C-FBAD98C82574";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0.2 10 0 21 -0.2 30 0 40 0.2;
+	setAttr -s 5 ".kit[1:4]"  1 18 1 18;
+	setAttr -s 5 ".kot[1:4]"  1 18 1 18;
+	setAttr -s 5 ".kix[1:4]"  0.8114376976473987 1 0.78967717284483496 
+		1;
+	setAttr -s 5 ".kiy[1:4]"  -0.58443892994622526 0 0.61352258531189285 
+		0;
+	setAttr -s 5 ".kox[1:4]"  0.81143763182771678 1 0.78967720329380109 
+		1;
+	setAttr -s 5 ".koy[1:4]"  -0.58443902133056358 0 0.61352254612041812 
+		0;
 createNode animCurveTU -n "Tail_IK_03_Ctrl_visibility";
 	rename -uid "EDBA899A-4F46-B935-9D5A-8FA326F9DAF8";
-	setAttr ".tan" 9;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  1 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kit[0:4]"  9 9 9 1 9;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
 createNode animCurveTA -n "Tail_IK_03_Ctrl_rotateX";
 	rename -uid "C6FEE781-4E48-FAF8-6D9F-3CBF8C80111E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 10 0 21 0 30 0 40 0;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTA -n "Tail_IK_03_Ctrl_rotateY";
 	rename -uid "2B123493-4DCC-2987-C556-209ADA241359";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 10 0 21 0 30 0 40 0;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTA -n "Tail_IK_03_Ctrl_rotateZ";
 	rename -uid "91C043A6-4E36-8FD5-15F8-F6A3ECE7DAEB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 10 0 21 0 30 0 40 0;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTU -n "Tail_IK_03_Ctrl_scaleX";
 	rename -uid "CF610B6B-43BC-50AA-EEFB-CA9FD506DF74";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTU -n "Tail_IK_03_Ctrl_scaleY";
 	rename -uid "E4007B6A-45F4-ED75-C172-AFBA11480907";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTU -n "Tail_IK_03_Ctrl_scaleZ";
 	rename -uid "AC298686-4891-7293-3C32-B881D1525560";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 10 1 21 1 30 1 40 1;
+	setAttr -s 5 ".kit[3:4]"  1 18;
+	setAttr -s 5 ".kot[3:4]"  1 18;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
+	setAttr -s 5 ".kox[3:4]"  1 1;
+	setAttr -s 5 ".koy[3:4]"  0 0;
 createNode animCurveTU -n "Tail_IK_03_Ctrl_Follow";
 	rename -uid "ECE13CEB-4598-C5A8-2E73-79867ED3DB10";
-	setAttr ".tan" 9;
+	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 3;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  1 3 10 3 21 3 30 3 40 3;
+	setAttr -s 5 ".kit[0:4]"  9 9 9 1 9;
+	setAttr -s 5 ".kix[3:4]"  1 1;
+	setAttr -s 5 ".kiy[3:4]"  0 0;
 createNode animCurveTA -n "R_Leg_IK_Ctrl_rotateZ";
 	rename -uid "8D894BE9-4518-2AD7-3239-26AA8EB36AB7";
 	setAttr ".tan" 18;
@@ -7050,6 +7022,704 @@ createNode animCurveTA -n "R_Leg_IK_Ctrl_rotateZ";
 	setAttr -s 10 ".kiy[5:9]"  0 0 0 0 0;
 	setAttr -s 10 ".kox[5:9]"  1 1 1 1 1;
 	setAttr -s 10 ".koy[5:9]"  0 0 0 0 0;
+createNode animCurveTL -n "R_Leg_PV_Ctrl_translateX";
+	rename -uid "EFB64EE6-46B6-F8CE-5868-19BCB10FE11F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 -9.783840404509192e-16;
+createNode animCurveTL -n "R_Leg_PV_Ctrl_translateY";
+	rename -uid "93259C62-4059-8F83-4311-55948623C86A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 -6.2796989830360417e-16;
+createNode animCurveTL -n "R_Leg_PV_Ctrl_translateZ";
+	rename -uid "47667143-453A-65B5-55ED-8996940E8361";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 -0.3;
+createNode animCurveTU -n "R_Leg_PV_Ctrl_visibility";
+	rename -uid "2C463BF1-4531-944A-0F51-43B76FA7E19A";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "R_Leg_PV_Ctrl_rotateX";
+	rename -uid "5F19354B-4623-77C0-B2FE-6F8973770232";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTA -n "R_Leg_PV_Ctrl_rotateY";
+	rename -uid "8D2BA90D-4DE5-590E-1FF7-62ABCFF153E0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTA -n "R_Leg_PV_Ctrl_rotateZ";
+	rename -uid "00A85373-4496-8659-28C7-F7B25EE15CB8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTU -n "R_Leg_PV_Ctrl_scaleX";
+	rename -uid "F9F5D9C9-4465-9B52-670C-BBB640F5B3B0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+createNode animCurveTU -n "R_Leg_PV_Ctrl_scaleY";
+	rename -uid "BF260B66-472C-C2C3-B7CA-9FAFCA4F8D7E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+createNode animCurveTU -n "R_Leg_PV_Ctrl_scaleZ";
+	rename -uid "6BEB2344-4B66-AFDB-5D95-3AAD6741C4E2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+createNode animCurveTU -n "R_Leg_PV_Ctrl_Follow";
+	rename -uid "9049C004-4301-1DAE-05DE-EC9CF8704DF2";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 3;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "L_Leg_PV_Ctrl_translateX";
+	rename -uid "C17249A3-4DE7-5C66-3B39-E8BBA5762C2D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTL -n "L_Leg_PV_Ctrl_translateY";
+	rename -uid "55857546-4836-6525-E85F-DFBC8D58D4DD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTL -n "L_Leg_PV_Ctrl_translateZ";
+	rename -uid "2AF4295B-4D5D-8611-0EB1-3FBD12B104ED";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0.3;
+createNode animCurveTU -n "L_Leg_PV_Ctrl_visibility";
+	rename -uid "2A6570C3-4286-C2EA-924D-E7BA5BF85149";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "L_Leg_PV_Ctrl_rotateX";
+	rename -uid "F33B9D68-4FB9-78FE-7526-0EAFBC8CCFBA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTA -n "L_Leg_PV_Ctrl_rotateY";
+	rename -uid "5738FD61-475F-792B-331E-4CB182A16E58";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTA -n "L_Leg_PV_Ctrl_rotateZ";
+	rename -uid "98BB07DE-42B6-3EC7-4517-BE82C65A6F51";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 0;
+createNode animCurveTU -n "L_Leg_PV_Ctrl_scaleX";
+	rename -uid "611D67A1-45E4-399D-C1C8-E3AD35D5C102";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+createNode animCurveTU -n "L_Leg_PV_Ctrl_scaleY";
+	rename -uid "9914D7A7-45E3-FE67-9C06-FA9402FFD884";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+createNode animCurveTU -n "L_Leg_PV_Ctrl_scaleZ";
+	rename -uid "EB3D8269-4C20-98EC-14F2-6CA7A25D5EB9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 1;
+createNode animCurveTU -n "L_Leg_PV_Ctrl_Follow";
+	rename -uid "7F7D26C0-4A85-40F3-7D8D-C2B6EDAECA28";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  0 3;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "Tail_11_Ctrl_rotateX";
+	rename -uid "B735A772-4EF2-FD0C-7ACE-558B6001E688";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTA -n "Tail_11_Ctrl_rotateY";
+	rename -uid "93FEEC3F-4140-A95B-1181-889A80F808A5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTA -n "Tail_11_Ctrl_rotateZ";
+	rename -uid "BE45DE3D-4B8D-EC9A-76D8-D2BC7B25A0BC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 10 21 10 40 10;
+createNode animCurveTA -n "Tail_12_Ctrl_rotateX";
+	rename -uid "6F63B0D5-4BBB-FD89-7265-498FDD3B2C0F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTA -n "Tail_12_Ctrl_rotateY";
+	rename -uid "828BBC17-4EF8-E56E-BE27-658FD65E9124";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTA -n "Tail_12_Ctrl_rotateZ";
+	rename -uid "D19714D5-484B-5FE6-EA56-5A8C8675AFB6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 10 21 10 40 10;
+createNode animCurveTA -n "Tail_13_Ctrl_rotateX";
+	rename -uid "C6EF9A1F-4394-E73A-CEF9-C29A9551F244";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTA -n "Tail_13_Ctrl_rotateY";
+	rename -uid "5CC72908-4F76-DC1B-78BA-0C9A5AE8B2AD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -2 10 -4 20 2 30 4 40 -2;
+createNode animCurveTA -n "Tail_13_Ctrl_rotateZ";
+	rename -uid "9FE665A4-4AE2-81C5-5F0B-CF8A1D010DD1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 6.0000000000000009 10 8 20 6.0000000000000009
+		 30 8 40 6.0000000000000009;
+createNode animCurveTA -n "Tail_14_Ctrl_rotateX";
+	rename -uid "EA5ADB6D-46BC-10C0-184C-CCA09B25024E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTA -n "Tail_14_Ctrl_rotateY";
+	rename -uid "E61E3AEB-41AF-4206-E5E8-F380A4D82774";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -2 10 -4 20 2 30 4 40 -2;
+createNode animCurveTA -n "Tail_14_Ctrl_rotateZ";
+	rename -uid "F65C4981-4295-BA18-AA0D-1CAD4B816293";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 6.0000000000000009 10 8 20 6.0000000000000009
+		 30 8 40 6.0000000000000009;
+createNode animCurveTA -n "Tail_15_Ctrl_rotateX";
+	rename -uid "AD849524-4F71-1266-FB25-3EB5B61E6BC4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTA -n "Tail_15_Ctrl_rotateY";
+	rename -uid "BB2889FC-47B7-5C1B-65D9-67A496C02933";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -2 10 -4 20 2 30 4 40 -2;
+createNode animCurveTA -n "Tail_15_Ctrl_rotateZ";
+	rename -uid "2C1303AF-40F2-2394-4337-71AAF2625DF7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 6.0000000000000009 10 8 20 6.0000000000000009
+		 30 8 40 6.0000000000000009;
+createNode animCurveTA -n "Tail_16_Ctrl_rotateX";
+	rename -uid "F2FC1E33-4836-7E10-9B2E-CB915FD0C75B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTA -n "Tail_16_Ctrl_rotateY";
+	rename -uid "9AB0B72B-4736-D092-AC63-69B59DFB670C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -2 10 -4 20 2 30 4 40 -2;
+createNode animCurveTA -n "Tail_16_Ctrl_rotateZ";
+	rename -uid "570A8745-445E-73AC-892D-60922CA70764";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 6.0000000000000009 10 8 20 6.0000000000000009
+		 30 8 40 6.0000000000000009;
+createNode animCurveTA -n "Tail_17_Ctrl_rotateX";
+	rename -uid "8BCB54A7-4426-0E8C-80FF-C4A954801B91";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTA -n "Tail_17_Ctrl_rotateY";
+	rename -uid "81240E60-4FD0-01A1-2658-9381FB492720";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -2 10 -4 20 2 30 4 40 -2;
+createNode animCurveTA -n "Tail_17_Ctrl_rotateZ";
+	rename -uid "8605FA54-4AEF-1414-3180-B9B0066BD3E2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 6.0000000000000009 10 8 20 6.0000000000000009
+		 30 8 40 6.0000000000000009;
+createNode animCurveTA -n "Tail_18_Ctrl_rotateX";
+	rename -uid "27817EB4-4EA6-AA5D-B4CE-54B5B200DD79";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTA -n "Tail_18_Ctrl_rotateY";
+	rename -uid "B007A5B8-4CD0-3C1D-DC62-4C93F86FD9F6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -2 10 -4 20 2 30 4 40 -2;
+createNode animCurveTA -n "Tail_18_Ctrl_rotateZ";
+	rename -uid "AEF7572C-4D2C-6887-F91D-E6B9032F71A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 6.0000000000000009 10 8 20 6.0000000000000009
+		 30 8 40 6.0000000000000009;
+createNode animCurveTA -n "Tail_19_Ctrl_rotateX";
+	rename -uid "4BE566C4-4342-9BB7-6DB4-BDBE8CBCD2C9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTA -n "Tail_19_Ctrl_rotateY";
+	rename -uid "B71A70EB-4BAF-589F-9E12-9198C88A49EB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -2 10 -4 20 2 30 4 40 -2;
+createNode animCurveTA -n "Tail_19_Ctrl_rotateZ";
+	rename -uid "282B8B47-4FEC-E414-41C6-7983C8E6C78F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 6.0000000000000009 10 8 20 6.0000000000000009
+		 30 8 40 6.0000000000000009;
+createNode animCurveTU -n "Tail_14_Ctrl_visibility";
+	rename -uid "FCE9C8C3-4748-AC35-1750-F68EB3D5EA9F";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+createNode animCurveTL -n "Tail_14_Ctrl_translateX";
+	rename -uid "98B13ABB-42AF-1A3A-076A-3B81CE87DC8D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_14_Ctrl_translateY";
+	rename -uid "2C9C2B95-4DF9-4AE7-1E48-9C82331B3A5A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_14_Ctrl_translateZ";
+	rename -uid "4043AC6D-47B0-EC07-218A-A6B6ABDA7677";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTU -n "Tail_14_Ctrl_scaleX";
+	rename -uid "9C8CF7AB-4AA0-8ED8-350B-E6AFE2A3DE9E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_14_Ctrl_scaleY";
+	rename -uid "C3ECD6DD-4E4C-E4FA-7158-D19358F37A2B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_14_Ctrl_scaleZ";
+	rename -uid "8A3F30CD-4939-C4AF-D62E-DAB6BF136F8D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_14_Ctrl_FollowTranslate";
+	rename -uid "93CEFA4E-4D17-E73A-FE95-538F58376B5B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_14_Ctrl_FollowRotate";
+	rename -uid "61FC5F86-4770-60D5-DDC6-009F7C21A419";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_16_Ctrl_visibility";
+	rename -uid "5C1D392C-4242-238F-CBF1-0EA65E19DEC1";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+createNode animCurveTL -n "Tail_16_Ctrl_translateX";
+	rename -uid "01D82CD1-467E-8AE2-F3A2-3FB84EE0D7A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_16_Ctrl_translateY";
+	rename -uid "EFABB595-49EC-5683-01B2-16936FA07733";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_16_Ctrl_translateZ";
+	rename -uid "2790763C-45D5-EB58-8448-798119CCBD9C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTU -n "Tail_16_Ctrl_scaleX";
+	rename -uid "A3434838-4C39-E1C1-3FC3-3B9A1A0D4076";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_16_Ctrl_scaleY";
+	rename -uid "855F34D0-4EF3-1346-DAD4-3CB2B52F305B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_16_Ctrl_scaleZ";
+	rename -uid "9362EC49-4B97-BD61-672A-8EBBA3ACBD66";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_16_Ctrl_FollowTranslate";
+	rename -uid "7AA09FA6-4D8A-AE2F-B680-A4BDC1826823";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_16_Ctrl_FollowRotate";
+	rename -uid "54F20CF3-4B27-97CD-1491-17A2C939E892";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_18_Ctrl_visibility";
+	rename -uid "11497F3A-4B70-DED5-85E4-98A4DD7FF11C";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+createNode animCurveTL -n "Tail_18_Ctrl_translateX";
+	rename -uid "FAA6B1C4-4ADC-5FB7-7CBE-EF8DCD909B54";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_18_Ctrl_translateY";
+	rename -uid "441DEDD9-4FB0-2DEB-FADE-23A53A21D43D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_18_Ctrl_translateZ";
+	rename -uid "EE9DC2C2-4DB5-E205-881B-33B99964E186";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTU -n "Tail_18_Ctrl_scaleX";
+	rename -uid "6B26BBEE-4730-9E14-551F-C5A6CED14F7C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_18_Ctrl_scaleY";
+	rename -uid "B2D7CF43-4385-DAB4-ADB4-8BBE058D1EDD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_18_Ctrl_scaleZ";
+	rename -uid "FAE2613E-45C8-6046-98D1-E1B5EEA7E795";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_18_Ctrl_FollowTranslate";
+	rename -uid "2D952D64-42AC-52E3-1045-8E94A47B1F1A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_18_Ctrl_FollowRotate";
+	rename -uid "BE51555E-4C3E-BB3E-7585-2C8D8DEB5D01";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_13_Ctrl_visibility";
+	rename -uid "3EDE573F-4CC1-B66D-35FE-988C51FE03CE";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+createNode animCurveTL -n "Tail_13_Ctrl_translateX";
+	rename -uid "0BE171D3-438A-1556-6B13-AEB06897003C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_13_Ctrl_translateY";
+	rename -uid "5C035125-4547-E168-25A7-84A47E11657A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_13_Ctrl_translateZ";
+	rename -uid "DF760E5C-40F7-23D9-DEB8-70B301FFBAC0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTU -n "Tail_13_Ctrl_scaleX";
+	rename -uid "017C1433-44C2-4D02-2C4B-67A273D4853C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_13_Ctrl_scaleY";
+	rename -uid "A0087C64-4327-8C3C-EC5E-96A30143D09F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_13_Ctrl_scaleZ";
+	rename -uid "2BC21DBD-48D4-D494-B826-39996211CED4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_13_Ctrl_FollowTranslate";
+	rename -uid "0999FB77-4AC9-FB69-CC8F-F5BD52564861";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_13_Ctrl_FollowRotate";
+	rename -uid "C78ACC7D-4890-3A6B-6795-13BB43788C8A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_15_Ctrl_visibility";
+	rename -uid "D0886F5E-419A-7051-4C8B-7BACD59771EE";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+createNode animCurveTL -n "Tail_15_Ctrl_translateX";
+	rename -uid "5F54872F-4B7D-A685-3A2D-CEA69A9CE07C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_15_Ctrl_translateY";
+	rename -uid "97721DB2-47AF-E0EE-83E9-6E8E69DEBDD8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_15_Ctrl_translateZ";
+	rename -uid "AD2A446F-4B34-9937-DCF6-AFBAF0D2F17A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTU -n "Tail_15_Ctrl_scaleX";
+	rename -uid "6E3D936B-4351-3870-99F4-88B303D47657";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_15_Ctrl_scaleY";
+	rename -uid "7077812E-4442-28A6-522D-0EAE7B06D173";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_15_Ctrl_scaleZ";
+	rename -uid "899C5082-4FFD-4940-5DFF-35B1E63AC24D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_15_Ctrl_FollowTranslate";
+	rename -uid "F7BF7768-4124-C637-2CBA-0E84F6C5090F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_15_Ctrl_FollowRotate";
+	rename -uid "8F1076CE-4539-A385-2A64-EBA97F803E2B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_11_Ctrl_visibility";
+	rename -uid "185058F0-46C5-A6B3-26F4-25ACAA9D4234";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
+createNode animCurveTL -n "Tail_11_Ctrl_translateX";
+	rename -uid "EF6B1B92-4002-8AB6-57E2-8D99A15A053F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTL -n "Tail_11_Ctrl_translateY";
+	rename -uid "F96E4AE4-48BD-C965-6AE0-60B80C7E1506";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTL -n "Tail_11_Ctrl_translateZ";
+	rename -uid "47EAAFEA-40B7-F418-82BD-6F95DE4F5A44";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTU -n "Tail_11_Ctrl_scaleX";
+	rename -uid "8D1B918C-4E9B-1697-F59C-8090E7B20AA8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_11_Ctrl_scaleY";
+	rename -uid "8FECB15A-48FF-A052-535E-A98FF47B18A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_11_Ctrl_scaleZ";
+	rename -uid "12DE9AC5-4255-332D-270F-489CFADA1CA0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_11_Ctrl_FollowTranslate";
+	rename -uid "46B4E763-4BEE-C5DD-6E68-F1859DC6AD0D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_11_Ctrl_FollowRotate";
+	rename -uid "1DE2F0C7-461A-42A6-FBEC-A58D12D8E01F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_12_Ctrl_visibility";
+	rename -uid "08DAE955-43CC-D7C2-5E26-689736131FA2";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
+createNode animCurveTL -n "Tail_12_Ctrl_translateX";
+	rename -uid "0C263A45-40B1-B1A0-BDE9-79A8A63A8FC9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTL -n "Tail_12_Ctrl_translateY";
+	rename -uid "86AAF055-4A10-E0E7-31E2-CFA013AB8F3B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTL -n "Tail_12_Ctrl_translateZ";
+	rename -uid "93DCDA2D-47B2-1366-AEBD-D7B49712FB34";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 21 0 40 0;
+createNode animCurveTU -n "Tail_12_Ctrl_scaleX";
+	rename -uid "D7F59DAF-46C9-8ACC-5645-0490233CEE68";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_12_Ctrl_scaleY";
+	rename -uid "11AB4330-4191-FE98-4DD9-33B3A5B1B5B7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_12_Ctrl_scaleZ";
+	rename -uid "12B22A74-44DA-5465-DB86-EF844E6A48B8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_12_Ctrl_FollowTranslate";
+	rename -uid "70DD53CF-4D2D-B93E-E1A3-6E8644A8F7FD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_12_Ctrl_FollowRotate";
+	rename -uid "3636577D-4D9F-81F4-C7C0-5EB5D50DCB2A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 21 1 40 1;
+createNode animCurveTU -n "Tail_19_Ctrl_visibility";
+	rename -uid "CE28A227-42BE-E321-3BD7-06A396B3480C";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+createNode animCurveTL -n "Tail_19_Ctrl_translateX";
+	rename -uid "2E28720B-4AB3-7A16-7612-52BB511F3B13";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_19_Ctrl_translateY";
+	rename -uid "0A95ECC0-406A-7386-E0B5-E58F7332770C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_19_Ctrl_translateZ";
+	rename -uid "F4FDAECA-457D-DC62-4477-EFA914658AC6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTU -n "Tail_19_Ctrl_scaleX";
+	rename -uid "F61D0B75-45E4-2B86-C92F-3C9F4BD37913";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_19_Ctrl_scaleY";
+	rename -uid "A7F96231-4324-6550-ACA3-19A64AD934C9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_19_Ctrl_scaleZ";
+	rename -uid "6996BE84-40C2-C0AB-D924-EE876D9E6A54";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_19_Ctrl_FollowTranslate";
+	rename -uid "1A3FC4C2-483D-81A3-03F0-C6AC7F1FBE21";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_19_Ctrl_FollowRotate";
+	rename -uid "EB647A6B-4BC5-28DC-1666-53937DB9099D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_17_Ctrl_visibility";
+	rename -uid "4E819010-498F-5A8C-A3C1-0EA0C0A506BF";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+createNode animCurveTL -n "Tail_17_Ctrl_translateX";
+	rename -uid "6FE7AC59-42DD-5124-094C-1B8DA7FE50A4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_17_Ctrl_translateY";
+	rename -uid "D001171D-4DBF-EFD6-0453-F7BE471D52E1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTL -n "Tail_17_Ctrl_translateZ";
+	rename -uid "B2D37899-44CB-2E68-8EB1-8CB057E5BC10";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0 10 0 20 0 30 0 40 0;
+createNode animCurveTU -n "Tail_17_Ctrl_scaleX";
+	rename -uid "3B26ED02-4AFA-DB31-57E8-FE9B5A55D524";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_17_Ctrl_scaleY";
+	rename -uid "63B9B900-4CCF-D5D9-CD97-02B27CB1F2AC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_17_Ctrl_scaleZ";
+	rename -uid "7BF08FB8-49D6-5329-7BE6-6E90379F4A4D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_17_Ctrl_FollowTranslate";
+	rename -uid "7D3A0D0F-405E-2FBD-A8C6-5F9DA7D139B8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode animCurveTU -n "Tail_17_Ctrl_FollowRotate";
+	rename -uid "EC2B0232-4394-E973-26AB-DB9F3E33ED0F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 1 10 1 20 1 30 1 40 1;
+createNode gameFbxExporter -n "gameExporterPreset1";
+	rename -uid "0B26F342-4992-EFB4-B643-A39F743CD146";
+	setAttr ".pn" -type "string" "Model Default";
+	setAttr ".ils" yes;
+	setAttr ".ebm" yes;
+	setAttr ".ich" yes;
+	setAttr ".inc" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+createNode gameFbxExporter -n "gameExporterPreset2";
+	rename -uid "E9F5B9C4-400E-7C9F-BFD9-FDAB5FE6DF53";
+	setAttr ".pn" -type "string" "Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".ilu" yes;
+	setAttr ".eti" 2;
+	setAttr ".ac[0].acn" -type "string" "WalkAnim";
+	setAttr ".ac[0].ace" 39;
+	setAttr ".spt" 2;
+	setAttr ".ic" no;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "Z:/UnrealProjectTest/MyProject/Content/Characters";
+createNode gameFbxExporter -n "gameExporterPreset3";
+	rename -uid "4DE57C2D-4DF2-C9E7-F38D-95A8F01E4D11";
+	setAttr ".pn" -type "string" "TE Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".eti" 3;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -7956,261 +8626,283 @@ connectAttr "L_Leg_IK_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[535]";
 connectAttr "L_Leg_IK_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[536]";
 connectAttr "L_Leg_IK_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[537]";
 connectAttr "L_Leg_IK_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[538]";
-connectAttr "R_Leg_IK_Ctrl_Follow.o" "NovaxenosRigSkinnedRN.phl[539]";
-connectAttr "R_Leg_IK_Ctrl_Foot_Roll.o" "NovaxenosRigSkinnedRN.phl[540]";
-connectAttr "R_Leg_IK_Ctrl_Foot_Bank.o" "NovaxenosRigSkinnedRN.phl[541]";
-connectAttr "R_Leg_IK_Ctrl_Heel_Twist.o" "NovaxenosRigSkinnedRN.phl[542]";
-connectAttr "R_Leg_IK_Ctrl_Toe_Twist.o" "NovaxenosRigSkinnedRN.phl[543]";
-connectAttr "R_Leg_IK_Ctrl_Toe_Tap.o" "NovaxenosRigSkinnedRN.phl[544]";
-connectAttr "R_Leg_IK_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[545]";
-connectAttr "R_Leg_IK_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[546]";
-connectAttr "R_Leg_IK_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[547]";
-connectAttr "R_Leg_IK_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[548]";
-connectAttr "R_Leg_IK_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[549]";
-connectAttr "R_Leg_IK_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[550]";
-connectAttr "R_Leg_IK_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[551]";
-connectAttr "R_Leg_IK_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[552]";
-connectAttr "R_Leg_IK_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[553]";
-connectAttr "R_Leg_IK_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[554]";
-connectAttr "Tail_01_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[555]";
-connectAttr "Tail_01_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[556]";
-connectAttr "Tail_01_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[557]";
-connectAttr "Tail_01_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[558]";
-connectAttr "Tail_01_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[559]";
-connectAttr "Tail_01_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[560]";
-connectAttr "Tail_01_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[561]";
-connectAttr "Tail_01_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[562]";
-connectAttr "Tail_01_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[563]";
-connectAttr "Tail_01_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[564]";
-connectAttr "Tail_01_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[565]";
-connectAttr "Tail_01_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[566]";
-connectAttr "Tail_02_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[567]";
-connectAttr "Tail_02_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[568]";
-connectAttr "Tail_02_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[569]";
-connectAttr "Tail_02_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[570]";
-connectAttr "Tail_02_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[571]";
-connectAttr "Tail_02_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[572]";
-connectAttr "Tail_02_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[573]";
-connectAttr "Tail_02_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[574]";
-connectAttr "Tail_02_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[575]";
-connectAttr "Tail_02_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[576]";
-connectAttr "Tail_02_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[577]";
-connectAttr "Tail_02_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[578]";
-connectAttr "Tail_03_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[579]";
-connectAttr "Tail_03_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[580]";
-connectAttr "Tail_03_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[581]";
-connectAttr "Tail_03_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[582]";
-connectAttr "Tail_03_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[583]";
-connectAttr "Tail_03_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[584]";
-connectAttr "Tail_03_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[585]";
-connectAttr "Tail_03_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[586]";
-connectAttr "Tail_03_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[587]";
-connectAttr "Tail_03_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[588]";
-connectAttr "Tail_03_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[589]";
-connectAttr "Tail_03_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[590]";
-connectAttr "Tail_04_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[591]";
-connectAttr "Tail_04_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[592]";
-connectAttr "Tail_04_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[593]";
-connectAttr "Tail_04_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[594]";
-connectAttr "Tail_04_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[595]";
-connectAttr "Tail_04_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[596]";
-connectAttr "Tail_04_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[597]";
-connectAttr "Tail_04_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[598]";
-connectAttr "Tail_04_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[599]";
-connectAttr "Tail_04_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[600]";
-connectAttr "Tail_04_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[601]";
-connectAttr "Tail_04_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[602]";
-connectAttr "Tail_05_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[603]";
-connectAttr "Tail_05_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[604]";
-connectAttr "Tail_05_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[605]";
-connectAttr "Tail_05_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[606]";
-connectAttr "Tail_05_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[607]";
-connectAttr "Tail_05_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[608]";
-connectAttr "Tail_05_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[609]";
-connectAttr "Tail_05_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[610]";
-connectAttr "Tail_05_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[611]";
-connectAttr "Tail_05_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[612]";
-connectAttr "Tail_05_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[613]";
-connectAttr "Tail_05_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[614]";
-connectAttr "Tail_06_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[615]";
-connectAttr "Tail_06_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[616]";
-connectAttr "Tail_06_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[617]";
-connectAttr "Tail_06_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[618]";
-connectAttr "Tail_06_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[619]";
-connectAttr "Tail_06_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[620]";
-connectAttr "Tail_06_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[621]";
-connectAttr "Tail_06_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[622]";
-connectAttr "Tail_06_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[623]";
-connectAttr "Tail_06_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[624]";
-connectAttr "Tail_06_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[625]";
-connectAttr "Tail_06_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[626]";
-connectAttr "Tail_07_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[627]";
-connectAttr "Tail_07_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[628]";
-connectAttr "Tail_07_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[629]";
-connectAttr "Tail_07_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[630]";
-connectAttr "Tail_07_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[631]";
-connectAttr "Tail_07_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[632]";
-connectAttr "Tail_07_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[633]";
-connectAttr "Tail_07_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[634]";
-connectAttr "Tail_07_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[635]";
-connectAttr "Tail_07_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[636]";
-connectAttr "Tail_07_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[637]";
-connectAttr "Tail_07_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[638]";
-connectAttr "Tail_08_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[639]";
-connectAttr "Tail_08_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[640]";
-connectAttr "Tail_08_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[641]";
-connectAttr "Tail_08_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[642]";
-connectAttr "Tail_08_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[643]";
-connectAttr "Tail_08_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[644]";
-connectAttr "Tail_08_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[645]";
-connectAttr "Tail_08_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[646]";
-connectAttr "Tail_08_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[647]";
-connectAttr "Tail_08_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[648]";
-connectAttr "Tail_08_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[649]";
-connectAttr "Tail_08_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[650]";
-connectAttr "Tail_09_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[651]";
-connectAttr "Tail_09_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[652]";
-connectAttr "Tail_09_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[653]";
-connectAttr "Tail_09_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[654]";
-connectAttr "Tail_09_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[655]";
-connectAttr "Tail_09_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[656]";
-connectAttr "Tail_09_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[657]";
-connectAttr "Tail_09_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[658]";
-connectAttr "Tail_09_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[659]";
-connectAttr "Tail_09_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[660]";
-connectAttr "Tail_09_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[661]";
-connectAttr "Tail_09_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[662]";
-connectAttr "Tail_10_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[663]";
-connectAttr "Tail_10_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[664]";
-connectAttr "Tail_10_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[665]";
-connectAttr "Tail_10_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[666]";
-connectAttr "Tail_10_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[667]";
-connectAttr "Tail_10_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[668]";
-connectAttr "Tail_10_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[669]";
-connectAttr "Tail_10_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[670]";
-connectAttr "Tail_10_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[671]";
-connectAttr "Tail_10_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[672]";
-connectAttr "Tail_10_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[673]";
-connectAttr "Tail_10_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[674]";
-connectAttr "Tail_11_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[675]";
-connectAttr "Tail_11_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[676]";
-connectAttr "Tail_11_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[677]";
-connectAttr "Tail_11_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[678]";
-connectAttr "Tail_11_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[679]";
-connectAttr "Tail_11_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[680]";
-connectAttr "Tail_11_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[681]";
-connectAttr "Tail_11_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[682]";
-connectAttr "Tail_11_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[683]";
-connectAttr "Tail_11_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[684]";
-connectAttr "Tail_11_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[685]";
-connectAttr "Tail_11_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[686]";
-connectAttr "Tail_12_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[687]";
-connectAttr "Tail_12_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[688]";
-connectAttr "Tail_12_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[689]";
-connectAttr "Tail_12_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[690]";
-connectAttr "Tail_12_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[691]";
-connectAttr "Tail_12_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[692]";
-connectAttr "Tail_12_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[693]";
-connectAttr "Tail_12_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[694]";
-connectAttr "Tail_12_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[695]";
-connectAttr "Tail_12_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[696]";
-connectAttr "Tail_12_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[697]";
-connectAttr "Tail_12_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[698]";
-connectAttr "Tail_13_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[699]";
-connectAttr "Tail_13_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[700]";
-connectAttr "Tail_13_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[701]";
-connectAttr "Tail_13_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[702]";
-connectAttr "Tail_13_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[703]";
-connectAttr "Tail_13_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[704]";
-connectAttr "Tail_13_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[705]";
-connectAttr "Tail_13_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[706]";
-connectAttr "Tail_13_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[707]";
-connectAttr "Tail_13_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[708]";
-connectAttr "Tail_13_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[709]";
-connectAttr "Tail_13_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[710]";
-connectAttr "Tail_14_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[711]";
-connectAttr "Tail_14_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[712]";
-connectAttr "Tail_14_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[713]";
-connectAttr "Tail_14_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[714]";
-connectAttr "Tail_14_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[715]";
-connectAttr "Tail_14_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[716]";
-connectAttr "Tail_14_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[717]";
-connectAttr "Tail_14_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[718]";
-connectAttr "Tail_14_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[719]";
-connectAttr "Tail_14_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[720]";
-connectAttr "Tail_14_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[721]";
-connectAttr "Tail_14_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[722]";
-connectAttr "Tail_15_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[723]";
-connectAttr "Tail_15_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[724]";
-connectAttr "Tail_15_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[725]";
-connectAttr "Tail_15_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[726]";
-connectAttr "Tail_15_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[727]";
-connectAttr "Tail_15_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[728]";
-connectAttr "Tail_15_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[729]";
-connectAttr "Tail_15_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[730]";
-connectAttr "Tail_15_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[731]";
-connectAttr "Tail_15_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[732]";
-connectAttr "Tail_15_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[733]";
-connectAttr "Tail_15_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[734]";
-connectAttr "Tail_16_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[735]";
-connectAttr "Tail_16_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[736]";
-connectAttr "Tail_16_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[737]";
-connectAttr "Tail_16_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[738]";
-connectAttr "Tail_16_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[739]";
-connectAttr "Tail_16_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[740]";
-connectAttr "Tail_16_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[741]";
-connectAttr "Tail_16_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[742]";
-connectAttr "Tail_16_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[743]";
-connectAttr "Tail_16_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[744]";
-connectAttr "Tail_16_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[745]";
-connectAttr "Tail_16_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[746]";
-connectAttr "Tail_17_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[747]";
-connectAttr "Tail_17_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[748]";
-connectAttr "Tail_17_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[749]";
-connectAttr "Tail_17_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[750]";
-connectAttr "Tail_17_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[751]";
-connectAttr "Tail_17_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[752]";
-connectAttr "Tail_17_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[753]";
-connectAttr "Tail_17_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[754]";
-connectAttr "Tail_17_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[755]";
-connectAttr "Tail_17_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[756]";
-connectAttr "Tail_17_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[757]";
-connectAttr "Tail_17_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[758]";
-connectAttr "Tail_18_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[759]";
-connectAttr "Tail_18_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[760]";
-connectAttr "Tail_18_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[761]";
-connectAttr "Tail_18_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[762]";
-connectAttr "Tail_18_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[763]";
-connectAttr "Tail_18_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[764]";
-connectAttr "Tail_18_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[765]";
-connectAttr "Tail_18_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[766]";
-connectAttr "Tail_18_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[767]";
-connectAttr "Tail_18_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[768]";
-connectAttr "Tail_18_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[769]";
-connectAttr "Tail_18_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[770]";
-connectAttr "Tail_19_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[771]";
-connectAttr "Tail_19_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[772]";
-connectAttr "Tail_19_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[773]";
-connectAttr "Tail_19_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[774]";
-connectAttr "Tail_19_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[775]";
-connectAttr "Tail_19_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[776]";
-connectAttr "Tail_19_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[777]";
-connectAttr "Tail_19_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[778]";
-connectAttr "Tail_19_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[779]";
-connectAttr "Tail_19_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[780]";
-connectAttr "Tail_19_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[781]";
-connectAttr "Tail_19_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[782]";
-connectAttr "Tail_IK_03_Ctrl_Follow.o" "NovaxenosRigSkinnedRN.phl[783]";
-connectAttr "Tail_IK_03_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[784]";
-connectAttr "Tail_IK_03_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[785]";
-connectAttr "Tail_IK_03_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[786]";
-connectAttr "Tail_IK_03_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[787]";
-connectAttr "Tail_IK_03_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[788]";
-connectAttr "Tail_IK_03_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[789]";
-connectAttr "Tail_IK_03_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[790]";
-connectAttr "Tail_IK_03_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[791]";
-connectAttr "Tail_IK_03_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[792]";
-connectAttr "Tail_IK_03_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[793]";
+connectAttr "L_Leg_PV_Ctrl_Follow.o" "NovaxenosRigSkinnedRN.phl[539]";
+connectAttr "L_Leg_PV_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[540]";
+connectAttr "L_Leg_PV_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[541]";
+connectAttr "L_Leg_PV_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[542]";
+connectAttr "L_Leg_PV_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[543]";
+connectAttr "L_Leg_PV_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[544]";
+connectAttr "L_Leg_PV_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[545]";
+connectAttr "L_Leg_PV_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[546]";
+connectAttr "L_Leg_PV_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[547]";
+connectAttr "L_Leg_PV_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[548]";
+connectAttr "L_Leg_PV_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[549]";
+connectAttr "R_Leg_IK_Ctrl_Follow.o" "NovaxenosRigSkinnedRN.phl[550]";
+connectAttr "R_Leg_IK_Ctrl_Foot_Roll.o" "NovaxenosRigSkinnedRN.phl[551]";
+connectAttr "R_Leg_IK_Ctrl_Foot_Bank.o" "NovaxenosRigSkinnedRN.phl[552]";
+connectAttr "R_Leg_IK_Ctrl_Heel_Twist.o" "NovaxenosRigSkinnedRN.phl[553]";
+connectAttr "R_Leg_IK_Ctrl_Toe_Twist.o" "NovaxenosRigSkinnedRN.phl[554]";
+connectAttr "R_Leg_IK_Ctrl_Toe_Tap.o" "NovaxenosRigSkinnedRN.phl[555]";
+connectAttr "R_Leg_IK_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[556]";
+connectAttr "R_Leg_IK_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[557]";
+connectAttr "R_Leg_IK_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[558]";
+connectAttr "R_Leg_IK_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[559]";
+connectAttr "R_Leg_IK_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[560]";
+connectAttr "R_Leg_IK_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[561]";
+connectAttr "R_Leg_IK_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[562]";
+connectAttr "R_Leg_IK_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[563]";
+connectAttr "R_Leg_IK_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[564]";
+connectAttr "R_Leg_IK_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[565]";
+connectAttr "R_Leg_PV_Ctrl_Follow.o" "NovaxenosRigSkinnedRN.phl[566]";
+connectAttr "R_Leg_PV_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[567]";
+connectAttr "R_Leg_PV_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[568]";
+connectAttr "R_Leg_PV_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[569]";
+connectAttr "R_Leg_PV_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[570]";
+connectAttr "R_Leg_PV_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[571]";
+connectAttr "R_Leg_PV_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[572]";
+connectAttr "R_Leg_PV_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[573]";
+connectAttr "R_Leg_PV_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[574]";
+connectAttr "R_Leg_PV_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[575]";
+connectAttr "R_Leg_PV_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[576]";
+connectAttr "Tail_01_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[577]";
+connectAttr "Tail_01_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[578]";
+connectAttr "Tail_01_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[579]";
+connectAttr "Tail_01_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[580]";
+connectAttr "Tail_01_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[581]";
+connectAttr "Tail_01_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[582]";
+connectAttr "Tail_01_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[583]";
+connectAttr "Tail_01_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[584]";
+connectAttr "Tail_01_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[585]";
+connectAttr "Tail_01_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[586]";
+connectAttr "Tail_01_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[587]";
+connectAttr "Tail_01_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[588]";
+connectAttr "Tail_02_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[589]";
+connectAttr "Tail_02_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[590]";
+connectAttr "Tail_02_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[591]";
+connectAttr "Tail_02_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[592]";
+connectAttr "Tail_02_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[593]";
+connectAttr "Tail_02_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[594]";
+connectAttr "Tail_02_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[595]";
+connectAttr "Tail_02_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[596]";
+connectAttr "Tail_02_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[597]";
+connectAttr "Tail_02_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[598]";
+connectAttr "Tail_02_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[599]";
+connectAttr "Tail_02_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[600]";
+connectAttr "Tail_03_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[601]";
+connectAttr "Tail_03_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[602]";
+connectAttr "Tail_03_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[603]";
+connectAttr "Tail_03_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[604]";
+connectAttr "Tail_03_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[605]";
+connectAttr "Tail_03_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[606]";
+connectAttr "Tail_03_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[607]";
+connectAttr "Tail_03_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[608]";
+connectAttr "Tail_03_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[609]";
+connectAttr "Tail_03_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[610]";
+connectAttr "Tail_03_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[611]";
+connectAttr "Tail_03_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[612]";
+connectAttr "Tail_04_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[613]";
+connectAttr "Tail_04_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[614]";
+connectAttr "Tail_04_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[615]";
+connectAttr "Tail_04_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[616]";
+connectAttr "Tail_04_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[617]";
+connectAttr "Tail_04_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[618]";
+connectAttr "Tail_04_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[619]";
+connectAttr "Tail_04_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[620]";
+connectAttr "Tail_04_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[621]";
+connectAttr "Tail_04_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[622]";
+connectAttr "Tail_04_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[623]";
+connectAttr "Tail_04_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[624]";
+connectAttr "Tail_05_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[625]";
+connectAttr "Tail_05_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[626]";
+connectAttr "Tail_05_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[627]";
+connectAttr "Tail_05_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[628]";
+connectAttr "Tail_05_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[629]";
+connectAttr "Tail_05_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[630]";
+connectAttr "Tail_05_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[631]";
+connectAttr "Tail_05_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[632]";
+connectAttr "Tail_05_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[633]";
+connectAttr "Tail_05_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[634]";
+connectAttr "Tail_05_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[635]";
+connectAttr "Tail_05_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[636]";
+connectAttr "Tail_06_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[637]";
+connectAttr "Tail_06_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[638]";
+connectAttr "Tail_06_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[639]";
+connectAttr "Tail_06_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[640]";
+connectAttr "Tail_06_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[641]";
+connectAttr "Tail_06_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[642]";
+connectAttr "Tail_06_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[643]";
+connectAttr "Tail_06_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[644]";
+connectAttr "Tail_06_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[645]";
+connectAttr "Tail_06_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[646]";
+connectAttr "Tail_06_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[647]";
+connectAttr "Tail_06_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[648]";
+connectAttr "Tail_07_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[649]";
+connectAttr "Tail_07_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[650]";
+connectAttr "Tail_07_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[651]";
+connectAttr "Tail_07_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[652]";
+connectAttr "Tail_07_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[653]";
+connectAttr "Tail_07_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[654]";
+connectAttr "Tail_07_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[655]";
+connectAttr "Tail_07_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[656]";
+connectAttr "Tail_07_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[657]";
+connectAttr "Tail_07_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[658]";
+connectAttr "Tail_07_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[659]";
+connectAttr "Tail_07_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[660]";
+connectAttr "Tail_08_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[661]";
+connectAttr "Tail_08_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[662]";
+connectAttr "Tail_08_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[663]";
+connectAttr "Tail_08_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[664]";
+connectAttr "Tail_08_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[665]";
+connectAttr "Tail_08_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[666]";
+connectAttr "Tail_08_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[667]";
+connectAttr "Tail_08_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[668]";
+connectAttr "Tail_08_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[669]";
+connectAttr "Tail_08_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[670]";
+connectAttr "Tail_08_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[671]";
+connectAttr "Tail_08_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[672]";
+connectAttr "Tail_09_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[673]";
+connectAttr "Tail_09_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[674]";
+connectAttr "Tail_09_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[675]";
+connectAttr "Tail_09_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[676]";
+connectAttr "Tail_09_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[677]";
+connectAttr "Tail_09_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[678]";
+connectAttr "Tail_09_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[679]";
+connectAttr "Tail_09_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[680]";
+connectAttr "Tail_09_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[681]";
+connectAttr "Tail_09_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[682]";
+connectAttr "Tail_09_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[683]";
+connectAttr "Tail_09_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[684]";
+connectAttr "Tail_10_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[685]";
+connectAttr "Tail_10_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[686]";
+connectAttr "Tail_10_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[687]";
+connectAttr "Tail_10_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[688]";
+connectAttr "Tail_10_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[689]";
+connectAttr "Tail_10_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[690]";
+connectAttr "Tail_10_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[691]";
+connectAttr "Tail_10_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[692]";
+connectAttr "Tail_10_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[693]";
+connectAttr "Tail_10_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[694]";
+connectAttr "Tail_10_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[695]";
+connectAttr "Tail_10_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[696]";
+connectAttr "Tail_11_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[697]";
+connectAttr "Tail_11_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[698]";
+connectAttr "Tail_11_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[699]";
+connectAttr "Tail_11_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[700]";
+connectAttr "Tail_11_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[701]";
+connectAttr "Tail_11_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[702]";
+connectAttr "Tail_11_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[703]";
+connectAttr "Tail_11_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[704]";
+connectAttr "Tail_11_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[705]";
+connectAttr "Tail_11_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[706]";
+connectAttr "Tail_11_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[707]";
+connectAttr "Tail_11_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[708]";
+connectAttr "Tail_12_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[709]";
+connectAttr "Tail_12_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[710]";
+connectAttr "Tail_12_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[711]";
+connectAttr "Tail_12_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[712]";
+connectAttr "Tail_12_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[713]";
+connectAttr "Tail_12_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[714]";
+connectAttr "Tail_12_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[715]";
+connectAttr "Tail_12_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[716]";
+connectAttr "Tail_12_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[717]";
+connectAttr "Tail_12_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[718]";
+connectAttr "Tail_12_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[719]";
+connectAttr "Tail_12_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[720]";
+connectAttr "Tail_13_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[721]";
+connectAttr "Tail_13_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[722]";
+connectAttr "Tail_13_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[723]";
+connectAttr "Tail_13_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[724]";
+connectAttr "Tail_13_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[725]";
+connectAttr "Tail_13_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[726]";
+connectAttr "Tail_13_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[727]";
+connectAttr "Tail_13_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[728]";
+connectAttr "Tail_13_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[729]";
+connectAttr "Tail_13_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[730]";
+connectAttr "Tail_13_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[731]";
+connectAttr "Tail_13_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[732]";
+connectAttr "Tail_14_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[733]";
+connectAttr "Tail_14_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[734]";
+connectAttr "Tail_14_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[735]";
+connectAttr "Tail_14_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[736]";
+connectAttr "Tail_14_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[737]";
+connectAttr "Tail_14_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[738]";
+connectAttr "Tail_14_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[739]";
+connectAttr "Tail_14_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[740]";
+connectAttr "Tail_14_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[741]";
+connectAttr "Tail_14_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[742]";
+connectAttr "Tail_14_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[743]";
+connectAttr "Tail_14_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[744]";
+connectAttr "Tail_15_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[745]";
+connectAttr "Tail_15_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[746]";
+connectAttr "Tail_15_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[747]";
+connectAttr "Tail_15_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[748]";
+connectAttr "Tail_15_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[749]";
+connectAttr "Tail_15_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[750]";
+connectAttr "Tail_15_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[751]";
+connectAttr "Tail_15_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[752]";
+connectAttr "Tail_15_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[753]";
+connectAttr "Tail_15_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[754]";
+connectAttr "Tail_15_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[755]";
+connectAttr "Tail_15_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[756]";
+connectAttr "Tail_16_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[757]";
+connectAttr "Tail_16_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[758]";
+connectAttr "Tail_16_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[759]";
+connectAttr "Tail_16_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[760]";
+connectAttr "Tail_16_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[761]";
+connectAttr "Tail_16_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[762]";
+connectAttr "Tail_16_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[763]";
+connectAttr "Tail_16_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[764]";
+connectAttr "Tail_16_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[765]";
+connectAttr "Tail_16_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[766]";
+connectAttr "Tail_16_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[767]";
+connectAttr "Tail_16_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[768]";
+connectAttr "Tail_17_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[769]";
+connectAttr "Tail_17_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[770]";
+connectAttr "Tail_17_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[771]";
+connectAttr "Tail_17_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[772]";
+connectAttr "Tail_17_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[773]";
+connectAttr "Tail_17_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[774]";
+connectAttr "Tail_17_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[775]";
+connectAttr "Tail_17_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[776]";
+connectAttr "Tail_17_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[777]";
+connectAttr "Tail_17_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[778]";
+connectAttr "Tail_17_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[779]";
+connectAttr "Tail_17_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[780]";
+connectAttr "Tail_18_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[781]";
+connectAttr "Tail_18_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[782]";
+connectAttr "Tail_18_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[783]";
+connectAttr "Tail_18_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[784]";
+connectAttr "Tail_18_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[785]";
+connectAttr "Tail_18_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[786]";
+connectAttr "Tail_18_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[787]";
+connectAttr "Tail_18_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[788]";
+connectAttr "Tail_18_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[789]";
+connectAttr "Tail_18_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[790]";
+connectAttr "Tail_18_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[791]";
+connectAttr "Tail_18_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[792]";
+connectAttr "Tail_19_Ctrl_FollowTranslate.o" "NovaxenosRigSkinnedRN.phl[793]";
+connectAttr "Tail_19_Ctrl_FollowRotate.o" "NovaxenosRigSkinnedRN.phl[794]";
+connectAttr "Tail_19_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[795]";
+connectAttr "Tail_19_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[796]";
+connectAttr "Tail_19_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[797]";
+connectAttr "Tail_19_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[798]";
+connectAttr "Tail_19_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[799]";
+connectAttr "Tail_19_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[800]";
+connectAttr "Tail_19_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[801]";
+connectAttr "Tail_19_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[802]";
+connectAttr "Tail_19_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[803]";
+connectAttr "Tail_19_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[804]";
+connectAttr "Tail_IK_03_Ctrl_Follow.o" "NovaxenosRigSkinnedRN.phl[805]";
+connectAttr "Tail_IK_03_Ctrl_translateX.o" "NovaxenosRigSkinnedRN.phl[806]";
+connectAttr "Tail_IK_03_Ctrl_translateY.o" "NovaxenosRigSkinnedRN.phl[807]";
+connectAttr "Tail_IK_03_Ctrl_translateZ.o" "NovaxenosRigSkinnedRN.phl[808]";
+connectAttr "Tail_IK_03_Ctrl_rotateX.o" "NovaxenosRigSkinnedRN.phl[809]";
+connectAttr "Tail_IK_03_Ctrl_rotateY.o" "NovaxenosRigSkinnedRN.phl[810]";
+connectAttr "Tail_IK_03_Ctrl_rotateZ.o" "NovaxenosRigSkinnedRN.phl[811]";
+connectAttr "Tail_IK_03_Ctrl_scaleX.o" "NovaxenosRigSkinnedRN.phl[812]";
+connectAttr "Tail_IK_03_Ctrl_scaleY.o" "NovaxenosRigSkinnedRN.phl[813]";
+connectAttr "Tail_IK_03_Ctrl_scaleZ.o" "NovaxenosRigSkinnedRN.phl[814]";
+connectAttr "Tail_IK_03_Ctrl_visibility.o" "NovaxenosRigSkinnedRN.phl[815]";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
