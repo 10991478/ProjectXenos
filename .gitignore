@@ -93,3 +93,9 @@ UnrealProject/ProjectXenos_FPS/Saved/AutoScreenshot.png
 UnrealProject/ProjectXenos_FPS/Intermediate/
 
 UnrealProject/ProjectXenos_FPS/Saved/
+
+#Ignore Textures folders
+
+Assets/Textures/
+
+UnrealProject/ProjectXenos_FPS/Content/Textures/
