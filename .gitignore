@@ -94,8 +94,10 @@ UnrealProject/ProjectXenos_FPS/Intermediate/
 
 UnrealProject/ProjectXenos_FPS/Saved/
 
-#Ignore Textures folders
+#Ignore Textures and Audio folders
 
 Assets/Textures/
 
 UnrealProject/ProjectXenos_FPS/Content/Textures_UASSET/
+
+UnrealProject/ProjectXenos_FPS/Content/Audio/
